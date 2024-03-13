@@ -1,38 +1,65 @@
 #!/bin/bash
 
 
-#Function to check if wget or curl is installed
-check_wget_curl() {
-    #Check if wget is installed
-    if ! command -v wget &> /dev/null; then
-        echo "wget is not installed"
-        
-        #Ask the user if they want to install wget
-        read -p "Do you want to install wget? [y/n] " wget_install
-        if [ "$wget_install" = "y" -o "$wget_install" = "Y" ]; then
-            #Install wget
-            sudo dnf install wget
+# Function to check if dependencies are installed
+# Tar, make, curl
+check_dependencies() {
+    # Check if tar is installed
+    echo "Checking if tar is installed..."
+    if ! command tar --version &> /dev/null; then
+        echo "tar is not installed"
+        # Ask the user if they want to install tar
+        read -p "Do you want to install tar? (y/n) " answer
+        if [ "$answer" = "y" -o "$answer" = "Y" ]; then
+            # Install tar
+            sudo dnf install tar
+            echo "tar installed successfully"
+            echo ""
         else
-            echo "Skipping wget installation"
+            echo "Exiting script because of missing dependencies..."
+            exit 1
         fi
     fi
     
-    #Check if curl is installed
-    if ! command -v curl &> /dev/null; then
-        echo "curl is not installed"
-        
-        #Ask the user if they want to install curl
-        read -p "Do you want to install curl? [y/n] " curl_install
-        if [ "$curl_install" = "y" -o "$curl_install" = "Y" ]; then
-            #Install curl
-            sudo dnf install curl
+    # Check if make is installed
+    echo "Checking if make is installed..."
+    if ! command make -v &> /dev/null; then
+        echo "make is not installed"
+        # Ask the user if they want to install make
+        read -p "Do you want to install make? (y/n) " answer
+        if [ "$answer" = "y" -o "$answer" = "Y" ]; then
+            # Install make
+            sudo dnf install make
+            echo "make installed successfully"
+            echo ""
         else
-            echo "Skipping curl installation"
+            echo "Exiting script because of missing dependencies..."
+            exit 1
+        fi
+    fi
+    
+    # Check if curl is installed
+    echo "Checking if curl is installed..."
+    if ! command curl --version &> /dev/null; then
+        echo "curl is not installed"
+        # Ask the user if they want to install curl
+        read -p "Do you want to install curl? (y/n) " answer
+        if [ "$answer" = "y" -o "$answer" = "Y" ]; then
+            # Install curl
+            sudo dnf install curl
+            echo "curl installed successfully"
+            echo ""
+        else
+            echo "Exiting script because of missing dependencies..."
+            exit 1
         fi
     fi
 }
 
-check_wget_curl
+# Message before checking dependencies
+echo "Checking dependencies..."
+# Call the function
+check_dependencies
 
 
 while true; do
@@ -652,8 +679,56 @@ while true; do
         fi
         
         
+        elif [ "$language" = "Smalltalk" -o "$language" = "smalltalk" ]; then
+        # Start installing Smalltalk
+        echo "Installing Smalltalk"
+        # Install Smalltalk
+        curl -O https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz
+        tar xf smalltalk-3.2.5.tar.xz
+        cd smalltalk-3.2.5/
+        ./configure
+        make
+        sudo make install
+        # Message after installing Smalltalk
+        echo "Smalltalk installed successfully"
+        
+        
+        elif [ "$language" = "Swift" -o "$language" = "swift" ]; then
+        # Start installing Swift
+        echo "Installing Swift"
+        # Install Swift
+        sudo dnf install swift-lang
+        # Message after installing Swift
+        echo "Swift installed successfully"
+        
+        
+        elif [ "$language" = "TypeScript" -o "$language" = "typescript" ]; then
+        # Start installing TypeScript
+        echo "Installing TypeScript"
+        # Installing TypeScript
+        sudo dnf install typescript
+        # Message after installing TypeScript
+        echo "TypeScript installed successfully"
+        
+        
+        elif [ "$language" = "Zig" -o "$language" = "zig" ]; then
+        # Start installing zig
+        echo "Installing zig"
+        # Installing zig
+        sudo dnf copr enable sentry/zig
+        sudo dnf install zig
+        # Message after installing zig
+        echo "zig installed successfully"
+        
     else
         echo "Language not available or wrong input"
     fi
 done
 
+# End of script
+echo "Script finished"
+echo "Thank you for using QuickLang"
+echo "Have a nice day!"
+echo ""
+echo "Exiting script..."
+exit 0
