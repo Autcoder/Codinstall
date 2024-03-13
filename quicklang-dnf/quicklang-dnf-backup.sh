@@ -720,6 +720,10 @@ while true; do
         # Message after installing zig
         echo "zig installed successfully"
         
+        
+        elif [ "$language" = "quit" -o "$language" = "Quit" -o "$language" = "q" -o "$language" = "Q" -o "$language" = "exit" -o "$language" = "Exit" -o "$language" = "e" -o "$language" = "E" ]; then
+        # Exit the script
+        break
     else
         echo "Language not available or wrong input"
     fi
