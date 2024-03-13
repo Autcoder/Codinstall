@@ -64,6 +64,7 @@ check_dependencies
 
 while true; do
     # Ask the user what language to install
+    echo ""
     read -p "What language do you want to install? " language
     echo ""
     
@@ -339,25 +340,29 @@ while true; do
         echo "Go installed successfully"
         
         
-        elif [ "$language" = "Haskell" -o "$language" = "haskell" -o "stack" -o "$language" = "Stack" ]; then
+        elif [ "$language" = "Haskell" -o "$language" = "haskell" ]; then
         # Start installing Haskell
         echo "Installing Haskell"
-        if [ "$language" = "stack" -o "$language" = "Stack" ]; then
-            # Start installing Stack
-            echo "Installing Stack"
-            # Install Stack
+        # Asking user if they want to install stack or haskell-platform
+        read -p "Do you want to install stack or haskell-platform? [stack/haskell-platform] " stack
+        if [ "$stack" = "stack" -o "$stack" = "Stack" ]; then
+            # Install stack
             sudo dnf install stack
-            #Start installing ghc
+            # Message after installing stack
+            echo "stack installed successfully"
+            # Installing ghc
             echo "Installing ghc"
-            # Message after installing Stack
-            echo "Stack and ghc installed successfully"
-            elif [ "$language" = "haskell" -o "$language" = "Haskell" ]; then
-            # Start installing Haskell
-            echo "Installing Haskell-Platform"
-            # Install Haskell
+            # Install ghc
+            sudo dnf install ghc
+            # Message after installing ghc
+            echo "ghc installed successfully"
+            elif [ "$stack" = "haskell-platform" -o "$stack" = "Haskell-platform" ]; then
+            # Install haskell-platform
             sudo dnf install haskell-platform
-            # Message after installing Haskell
-            echo "Haskell-Platform installed successfully"
+            # Message after installing haskell-platform
+            echo "Haskell-platform installed successfully"
+        else
+            echo "Invalid choice"
         fi
         
         
@@ -381,7 +386,7 @@ while true; do
         fi
         
         
-        elif [ "$language" = "jQuery" -o "$language" = "JQuery" -o"$language" = "Jquery" -o "$language" = "jquery" ]; then
+        elif [ "$language" = "jQuery" -o "$language" = "JQuery" -o "$language" = "Jquery" -o "$language" = "jquery" ]; then
         # Start installing JQuery
         echo "Installing JQuery"
         # Install jQuery
@@ -720,6 +725,10 @@ while true; do
         # Message after installing zig
         echo "zig installed successfully"
         
+        
+        elif [ "$language" = "quit" -o "$language" = "Quit" -o "$language" = "q" -o "$language" = "Q" -o "$language" = "exit" -o "$language" = "Exit" -o "$language" = "e" -o "$language" = "E" ]; then
+        # Exit the script
+        break
     else
         echo "Language not available or wrong input"
     fi
