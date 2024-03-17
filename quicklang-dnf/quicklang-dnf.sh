@@ -737,7 +737,6 @@ done
 # End of script
 echo "Script finished"
 echo "Thank you for using QuickLang"
-echo "Have a nice day!"
 echo ""
 echo "Exiting script..."
 exit 0
