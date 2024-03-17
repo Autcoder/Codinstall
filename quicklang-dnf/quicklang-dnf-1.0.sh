@@ -6,8 +6,8 @@ check_tar() {
     echo "Checking if tar is installed..."
     if ! command tar --version &> /dev/null; then
         echo "Tar is not installed"
-        read -p "Do you want to install tar? (y/n) " answer
         while true; do
+            read -p "Do you want to install tar? (y/n) " answer
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf -y install tar
                 echo "Tar installed successfully"
@@ -28,8 +28,8 @@ check_make() {
     echo "Checking if make is installed..."
     if ! command make -v &> /dev/null; then
         echo "Make is not installed"
-        read -p "Do you want to install make? (y/n) " answer
         while true; do
+            read -p "Do you want to install make? (y/n) " answer
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf -y install make
                 echo "Make installed successfully"
@@ -50,8 +50,8 @@ check_curl() {
     echo "Checking if curl is installed..."
     if ! command curl --version &> /dev/null; then
         echo "Curl is not installed"
-        read -p "Do you want to install curl? (y/n) " answer
         while true; do
+            read -p "Do you want to install curl? (y/n) " answer
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf -y install curl
                 echo "Curl installed successfully"
@@ -71,9 +71,8 @@ check_curl() {
 check_openjdk() {
     if ! command java --version &> /dev/null; then
         echo "Openjdk is not installed"
-        read -p "Do you want to install Openjdk? [y/n] " -n 1 -r
-        echo
         while true; do
+            read -p "Do you want to install Openjdk? [y/n] " -n 1 -r
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf install -y java-latest-openjdk
                 echo "Openjdk installed successfully"
@@ -93,8 +92,8 @@ check_openjdk() {
 check_snapd() {
     if ! command snap --version &> /dev/null; then
         echo "snapd is not installed"
-        read -p "Do you want to install snapd? [y/n] " snapd_install
         while true; do
+            read -p "Do you want to install snapd? [y/n] " snapd_install
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf install -y snapd
                 sudo ln -s /var/lib/snapd/snap /snap
@@ -122,12 +121,17 @@ install_everything() {
     
     echo "Starting installation of everything"
     # Ask user if they are sure
-    read -p "Are you sure you want to install everything? (y/n) " answer
-    if [ "$answer" = "y" -o "$answer" = "Y" ]; then
-        echo "Installing everything"
-    else
-        return
-    fi
+    while true; do
+        read -p "Are you sure you want to install everything? (y/n) " answer
+        if [ "$answer" = "y" -o "$answer" = "Y" ]; then
+            echo "Installing everything"
+            elif [ "$answer" = "n" -o "$answer" = "N" ]; then
+            echo "Returning to main menu"
+            return
+        else
+            echo "Invalid input"
+        fi
+    done
     
     # Install Ada
     sudo dnf install fedora-gnat-project-common gprbuild gcc-gnat
