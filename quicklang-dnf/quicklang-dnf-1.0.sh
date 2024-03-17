@@ -289,8 +289,8 @@ while true; do
         
         # Install C
         elif [ "$language" = "C" -o "$language" = "c" ]; then
-        read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
         while true; do
+            read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc
                 echo "GCC installed successfully"
@@ -306,8 +306,8 @@ while true; do
         
         # Install C++
         elif [ "$language" = "C++" -o "$language" = "c++" ]; then
-        read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
         while true; do
+            read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc-c++
                 check_installation_success
@@ -322,8 +322,8 @@ while true; do
         
         # Install C#
         elif [ "$language" = "C#" -o "$language" = "c#" -o "$language" = "cs" -o "$language" = "CS" -o "$language" = "Csharp" -o "$language" = "CSharp" -o "$language" = "csharp" -o "$language" = "mono" -o "$language" = "Mono" -o "$language" = "netcore" -o "$language" = "Netcore" -o "$language" = "dotnet" -o "$language" = "Dotnet" ]; then
-        read -p "Do you want to install mono or netcore? [mono/netcore] " runtime
         while true; do
+            read -p "Do you want to install mono or netcore? [mono/netcore] " runtime
             if [ "$runtime" = "mono" -o "$runtime" = "Mono" ]; then
                 sudo dnf install mono-devel
                 check_installation_success
@@ -374,8 +374,8 @@ while true; do
         sudo dnf install fpc
         check_installation_success
         echo ""
-        echo "Do you want to install Lazarus? [y/n] " ide
         while true; do
+            echo "Do you want to install Lazarus? [y/n] " ide
             if [ "$ide" = "y" -o "$ide" = "Y" ]; then
                 sudo dnf install lazarus
                 check_installation_success
@@ -383,7 +383,7 @@ while true; do
                 elif [ "$ide" = "n" -o "$ide" = "N" ]; then
                 echo "Skipping Lazarus installation"
             else
-                echo ""
+                echo "Invalid choice"
             fi
         done
         
@@ -399,8 +399,8 @@ while true; do
         
         # Install F#
         elif [ "$language" = "F#" -o "$language" = "f#" ]; then
-        read -p "Do you want to install .Net Core 6 or 7? [6/7] " version
         while true; do
+            read -p "Do you want to install .Net Core 6 or 7? [6/7] " version
             if [ "$version" = "6" ]; then
                 sudo dnf install dotnet-sdk-6.0
                 check_installation_success
@@ -437,8 +437,8 @@ while true; do
         
         # Install Groovy
         elif [ "$language" = "Haskell" -o "$language" = "haskell" ]; then
-        read -p "Do you want to install stack or haskell-platform? [stack/haskell-platform] " stack
         while true; do
+            read -p "Do you want to install stack or haskell-platform? [stack/haskell-platform] " stack
             if [ "$stack" = "stack" -o "$stack" = "Stack" ]; then
                 # Installing Stack
                 sudo dnf install stack
@@ -458,8 +458,8 @@ while true; do
         
         # Install Java
         elif [ "$language" = "java" -o "$language" = "Java" -o "$language" = "openjdk" -o "$language" = "Openjdk" ]; then
-        read -p "Do you want to install Openjdk or Openjdk-devel? [openjdk/openjdk-devel] " jdk
         while true; do
+            read -p "Do you want to install Openjdk or Openjdk-devel? [openjdk/openjdk-devel] " jdk
             if [ "$jdk" = "openjdk" -o "$jdk" = "Openjdk" ]; then
                 # Install Openjdk
                 sudo dnf install java-latest-openjdk
@@ -612,7 +612,7 @@ while true; do
         
         # Install every single one
         elif [ "$language" = "install-all" ]; then
-        install_everyt  5gg5ffff44ffffhing
+        install_everything
         check_installation_success
         break
         
