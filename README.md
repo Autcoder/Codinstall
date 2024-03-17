@@ -4,15 +4,21 @@ Quicklang is a Bash script that simplifies the installation of programming langu
 
 ## Getting Started
 
-**Download the script**: Clone or download the Quicklang script from the GitHub repository to your local machine.
+**Download the script**
+There are two ways to download the script:
+
+- Go to the Releases and choose the latest release compatible with your package manager (e.g. dnf, apt). This is recommended when you just want to use the script.
+- If you want to change or fork the script to your liking, you can clone the Repository onto your system with following command:
 
 ```
 git clone https://github.com/Autcoder/Auto-languages-installer.git
 ```
 
-**Navigate to the Script Directory**: Open a terminal and navigate to the directory where the Quicklang script is located.
+**Navigate to the Script Directory**
+Open a terminal and navigate to the directory where the Quicklang script is located, or directly open a terminal in that directory.
 
-**Run the Script**: Execute the Quicklang script by typing the following command in the terminal:
+**Run the Script**
+Execute the Quicklang script by typing the following command in the terminal:
 
 ```
 bash ./quicklang-dnf.sh
@@ -20,15 +26,13 @@ bash ./quicklang-dnf.sh
 
 ### Usage
 
-- When you run the Quicklang script, it will automatically check for dependencies (tar, curl, and make) required for installation. If any of these dependencies are missing, the script will prompt you to install them.
+- When you run the Quicklang script, it will automatically check for dependencies (tar, curl, and make) if needed for installation. If any of these dependencies are missing, the script will prompt you to install them.
 
-- After ensuring that dependencies are met, the script will ask you to specify the programming language you want to install. Simply type the name of the language and press Enter.
-
-Quicklang will then execute the necessary commands to install the specified programming language on your system.
+- Quicklang will then execute the necessary commands to install the specified programming language on your system.
 
 To exit the script, type "exit" or "quit" and press Enter.
 
-#### Supported Languages(for dnf)
+#### Supported Languages
 
 Quicklang currently supports the installation of the following programming languages:
 
@@ -40,7 +44,7 @@ Quicklang currently supports the installation of the following programming langu
 - C#
 - Clojure
 - D
-- Dart
+- Dart (via Flutter)
 - Delphi
 - Elixir
 - Erlang
@@ -73,5 +77,4 @@ Quicklang currently supports the installation of the following programming langu
 - Typescript
 - Zig
 
-Be sure to report any bug that you stumble upon!
-Feature requests are also welcome!
+Be sure to send feedback for the script. Feature suggestions/requests, bugs, just feedback, everything is welcome!
