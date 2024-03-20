@@ -6,8 +6,8 @@ check_tar() {
     echo "Checking if tar is installed..."
     if ! command tar --version &> /dev/null; then
         echo "Tar is not installed"
+        read -p "Do you want to install tar? (y/n) " answer
         while true; do
-            read -p "Do you want to install tar? (y/n) " answer
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf -y install tar
                 echo "Tar installed successfully"
@@ -28,8 +28,8 @@ check_make() {
     echo "Checking if make is installed..."
     if ! command make -v &> /dev/null; then
         echo "Make is not installed"
+        read -p "Do you want to install make? (y/n) " answer
         while true; do
-            read -p "Do you want to install make? (y/n) " answer
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf -y install make
                 echo "Make installed successfully"
@@ -50,8 +50,8 @@ check_curl() {
     echo "Checking if curl is installed..."
     if ! command curl --version &> /dev/null; then
         echo "Curl is not installed"
+        read -p "Do you want to install curl? (y/n) " answer
         while true; do
-            read -p "Do you want to install curl? (y/n) " answer
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf -y install curl
                 echo "Curl installed successfully"
@@ -71,8 +71,9 @@ check_curl() {
 check_openjdk() {
     if ! command java --version &> /dev/null; then
         echo "Openjdk is not installed"
+        read -p "Do you want to install Openjdk? [y/n] " -n 1 -r
+        echo
         while true; do
-            read -p "Do you want to install Openjdk? [y/n] " -n 1 -r
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf install -y java-latest-openjdk
                 echo "Openjdk installed successfully"
@@ -92,8 +93,8 @@ check_openjdk() {
 check_snapd() {
     if ! command snap --version &> /dev/null; then
         echo "snapd is not installed"
+        read -p "Do you want to install snapd? [y/n] " snapd_install
         while true; do
-            read -p "Do you want to install snapd? [y/n] " snapd_install
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 sudo dnf install -y snapd
                 sudo ln -s /var/lib/snapd/snap /snap
@@ -121,18 +122,12 @@ install_everything() {
     
     echo "Starting installation of everything"
     # Ask user if they are sure
-    while true; do
-        read -p "Are you sure you want to install everything? (y/n) " answer
-        if [ "$answer" = "y" -o "$answer" = "Y" ]; then
-            echo "Installing everything"
-            break
-            elif [ "$answer" = "n" -o "$answer" = "N" ]; then
-            echo "Returning to main menu"
-            return
-        else
-            echo "Invalid input"
-        fi
-    done
+    read -p "Are you sure you want to install everything? (y/n) " answer
+    if [ "$answer" = "y" -o "$answer" = "Y" ]; then
+        echo "Installing everything"
+    else
+        return
+    fi
     
     # Install Ada
     sudo dnf install fedora-gnat-project-common gprbuild gcc-gnat
@@ -294,16 +289,16 @@ while true; do
         
         # Install C
         elif [ "$language" = "C" -o "$language" = "c" ]; then
+        read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
         while true; do
-            read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc
                 echo "GCC installed successfully"
-                break
+                
                 elif [ "$compiler" = "clang" -o "$compiler" = "Clang" ]; then
                 sudo dnf install clang
                 echo "Clang installed successfully"
-                break
+                
             else
                 echo "Invalid compiler choice"
             fi
@@ -311,16 +306,15 @@ while true; do
         
         # Install C++
         elif [ "$language" = "C++" -o "$language" = "c++" ]; then
+        read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
         while true; do
-            read -p "Do you want to install GCC or Clang? [gcc/clang] " compiler
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc-c++
                 check_installation_success
-                break
+                
                 elif [ "$compiler" = "clang" -o "$compiler" = "Clang" ]; then
                 sudo dnf install clang
                 check_installation_success
-                break
             else
                 echo "Invalid compiler choice"
             fi
@@ -328,8 +322,8 @@ while true; do
         
         # Install C#
         elif [ "$language" = "C#" -o "$language" = "c#" -o "$language" = "cs" -o "$language" = "CS" -o "$language" = "Csharp" -o "$language" = "CSharp" -o "$language" = "csharp" -o "$language" = "mono" -o "$language" = "Mono" -o "$language" = "netcore" -o "$language" = "Netcore" -o "$language" = "dotnet" -o "$language" = "Dotnet" ]; then
+        read -p "Do you want to install mono or netcore? [mono/netcore] " runtime
         while true; do
-            read -p "Do you want to install mono or netcore? [mono/netcore] " runtime
             if [ "$runtime" = "mono" -o "$runtime" = "Mono" ]; then
                 sudo dnf install mono-devel
                 check_installation_success
@@ -340,11 +334,11 @@ while true; do
                     if [ "$version" = "6" ]; then
                         sudo dnf install dotnet-sdk-6.0
                         check_installation_success
-                        break
+                        
                         elif [ "$version" = "7" ]; then
                         sudo dnf install dotnet-sdk-7.0
                         check_installation_success
-                        break
+                        
                     else
                         echo "Invalid version choice"
                     fi
@@ -380,17 +374,16 @@ while true; do
         sudo dnf install fpc
         check_installation_success
         echo ""
+        echo "Do you want to install Lazarus? [y/n] " ide
         while true; do
-            echo "Do you want to install Lazarus? [y/n] " ide
             if [ "$ide" = "y" -o "$ide" = "Y" ]; then
                 sudo dnf install lazarus
                 check_installation_success
-                break
+                
                 elif [ "$ide" = "n" -o "$ide" = "N" ]; then
                 echo "Skipping Lazarus installation"
-                break
             else
-                echo "Invalid choice"
+                echo ""
             fi
         done
         
@@ -406,16 +399,16 @@ while true; do
         
         # Install F#
         elif [ "$language" = "F#" -o "$language" = "f#" ]; then
+        read -p "Do you want to install .Net Core 6 or 7? [6/7] " version
         while true; do
-            read -p "Do you want to install .Net Core 6 or 7? [6/7] " version
             if [ "$version" = "6" ]; then
                 sudo dnf install dotnet-sdk-6.0
                 check_installation_success
-                break
+                
                 elif [ "$version" = "7" ]; then
                 sudo dnf install dotnet-sdk-7.0
                 check_installation_success
-                break
+                echo "F# installed successfully"
             else
                 echo "Invalid version choice"
             fi
@@ -444,8 +437,8 @@ while true; do
         
         # Install Groovy
         elif [ "$language" = "Haskell" -o "$language" = "haskell" ]; then
+        read -p "Do you want to install stack or haskell-platform? [stack/haskell-platform] " stack
         while true; do
-            read -p "Do you want to install stack or haskell-platform? [stack/haskell-platform] " stack
             if [ "$stack" = "stack" -o "$stack" = "Stack" ]; then
                 # Installing Stack
                 sudo dnf install stack
@@ -454,11 +447,10 @@ while true; do
                 echo "Installing ghc"
                 sudo dnf install ghc
                 check_installation_success
-                break
+                
                 elif [ "$stack" = "haskell-platform" -o "$stack" = "Haskell-platform" ]; then
                 sudo dnf install haskell-platform
                 check_installation_success
-                break
             else
                 echo "Invalid choice"
             fi
@@ -466,17 +458,15 @@ while true; do
         
         # Install Java
         elif [ "$language" = "java" -o "$language" = "Java" -o "$language" = "openjdk" -o "$language" = "Openjdk" ]; then
+        read -p "Do you want to install Openjdk or Openjdk-devel? [openjdk/openjdk-devel] " jdk
         while true; do
-            read -p "Do you want to install Openjdk or Openjdk-devel? [openjdk/openjdk-devel] " jdk
             if [ "$jdk" = "openjdk" -o "$jdk" = "Openjdk" ]; then
                 # Install Openjdk
                 sudo dnf install java-latest-openjdk
                 check_installation_success
-                break
                 elif [ "$jdk" = "openjdk-devel" -o "$jdk" = "Openjdk-devel" ]; then
                 sudo dnf install java-latest-openjdk-devel
                 check_installation_success
-                break
             else
                 echo "Invalid choice"
             fi
@@ -622,7 +612,7 @@ while true; do
         
         # Install every single one
         elif [ "$language" = "install-all" ]; then
-        install_everything
+        install_everyt  5gg5ffff44ffffhing
         check_installation_success
         break
         

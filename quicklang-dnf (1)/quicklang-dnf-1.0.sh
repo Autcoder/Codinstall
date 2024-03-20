@@ -125,7 +125,6 @@ install_everything() {
         read -p "Are you sure you want to install everything? (y/n) " answer
         if [ "$answer" = "y" -o "$answer" = "Y" ]; then
             echo "Installing everything"
-            break
             elif [ "$answer" = "n" -o "$answer" = "N" ]; then
             echo "Returning to main menu"
             return
@@ -299,11 +298,11 @@ while true; do
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc
                 echo "GCC installed successfully"
-                break
+                
                 elif [ "$compiler" = "clang" -o "$compiler" = "Clang" ]; then
                 sudo dnf install clang
                 echo "Clang installed successfully"
-                break
+                
             else
                 echo "Invalid compiler choice"
             fi
@@ -316,11 +315,10 @@ while true; do
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc-c++
                 check_installation_success
-                break
+                
                 elif [ "$compiler" = "clang" -o "$compiler" = "Clang" ]; then
                 sudo dnf install clang
                 check_installation_success
-                break
             else
                 echo "Invalid compiler choice"
             fi
@@ -340,11 +338,11 @@ while true; do
                     if [ "$version" = "6" ]; then
                         sudo dnf install dotnet-sdk-6.0
                         check_installation_success
-                        break
+                        
                         elif [ "$version" = "7" ]; then
                         sudo dnf install dotnet-sdk-7.0
                         check_installation_success
-                        break
+                        
                     else
                         echo "Invalid version choice"
                     fi
@@ -385,10 +383,9 @@ while true; do
             if [ "$ide" = "y" -o "$ide" = "Y" ]; then
                 sudo dnf install lazarus
                 check_installation_success
-                break
+                
                 elif [ "$ide" = "n" -o "$ide" = "N" ]; then
                 echo "Skipping Lazarus installation"
-                break
             else
                 echo "Invalid choice"
             fi
@@ -411,11 +408,11 @@ while true; do
             if [ "$version" = "6" ]; then
                 sudo dnf install dotnet-sdk-6.0
                 check_installation_success
-                break
+                
                 elif [ "$version" = "7" ]; then
                 sudo dnf install dotnet-sdk-7.0
                 check_installation_success
-                break
+                echo "F# installed successfully"
             else
                 echo "Invalid version choice"
             fi
@@ -454,11 +451,10 @@ while true; do
                 echo "Installing ghc"
                 sudo dnf install ghc
                 check_installation_success
-                break
+                
                 elif [ "$stack" = "haskell-platform" -o "$stack" = "Haskell-platform" ]; then
                 sudo dnf install haskell-platform
                 check_installation_success
-                break
             else
                 echo "Invalid choice"
             fi
@@ -472,11 +468,9 @@ while true; do
                 # Install Openjdk
                 sudo dnf install java-latest-openjdk
                 check_installation_success
-                break
                 elif [ "$jdk" = "openjdk-devel" -o "$jdk" = "Openjdk-devel" ]; then
                 sudo dnf install java-latest-openjdk-devel
                 check_installation_success
-                break
             else
                 echo "Invalid choice"
             fi
