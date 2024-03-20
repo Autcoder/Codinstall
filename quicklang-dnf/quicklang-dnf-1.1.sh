@@ -4,72 +4,75 @@
 # Functions to check if dependencies are installed
 check_tar() {
     echo "Checking if tar is installed..."
-    if ! command tar --version &> /dev/null; then
+    if ! command -v tar &> /dev/null; then
         echo "Tar is not installed"
         while true; do
             read -p "Do you want to install tar? (y/n) " answer
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
-                sudo dnf -y install tar
+            if [[ $answer =~ ^[Yy]$ ]]; then
+                sudo dnf install -y tar
                 echo "Tar installed successfully"
                 return 0
-                elif [[ $REPLY =~ ^[Nn]$ ]]; then
+                elif [[ $answer =~ ^[Nn]$ ]]; then
                 echo "Skipping tar installation"
                 return 1
             else
-                echo ""
+                echo "Invalid input. Please enter either 'y' or 'n'."
             fi
         done
     else
+        echo "Tar is already installed"
         return 0
     fi
 }
 
 check_make() {
     echo "Checking if make is installed..."
-    if ! command make -v &> /dev/null; then
+    if ! command -v make &> /dev/null; then
         echo "Make is not installed"
         while true; do
             read -p "Do you want to install make? (y/n) " answer
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
-                sudo dnf -y install make
+            if [[ $answer =~ ^[Yy]$ ]]; then
+                sudo dnf install -y make
                 echo "Make installed successfully"
                 return 0
-                elif [[ $REPLY =~ ^[Nn]$ ]]; then
+                elif [[ $answer =~ ^[Nn]$ ]]; then
                 echo "Skipping make installation"
                 return 1
             else
-                echo ""
+                echo "Invalid input. Please enter either 'y' or 'n'."
             fi
         done
     else
+        echo "Make is already installed"
         return 0
     fi
 }
 
 check_curl() {
     echo "Checking if curl is installed..."
-    if ! command curl --version &> /dev/null; then
+    if ! command -v curl &> /dev/null; then
         echo "Curl is not installed"
         while true; do
             read -p "Do you want to install curl? (y/n) " answer
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
-                sudo dnf -y install curl
+            if [[ $answer =~ ^[Yy]$ ]]; then
+                sudo dnf install -y curl
                 echo "Curl installed successfully"
                 return 0
-                elif [[ $REPLY =~ ^[Nn]$ ]]; then
+                elif [[ $answer =~ ^[Nn]$ ]]; then
                 echo "Skipping Curl installation"
                 return 1
             else
-                echo ""
+                echo "Invalid input. Please enter either 'y' or 'n'."
             fi
         done
     else
+        echo "Curl is already installed"
         return 0
     fi
 }
 
 check_openjdk() {
-    if ! command java --version &> /dev/null; then
+    if ! command -v java &> /dev/null; then
         echo "Openjdk is not installed"
         while true; do
             read -p "Do you want to install Openjdk? [y/n] " -n 1 -r
@@ -81,37 +84,63 @@ check_openjdk() {
                 echo "Skipping Openjdk installation"
                 return 1
             else
-                echo ""
+                echo "Invalid input. Please enter either 'y' or 'n'."
             fi
         done
     else
+        echo "Openjdk is already installed"
         return 0
     fi
 }
 
 check_snapd() {
-    if ! command snap --version &> /dev/null; then
+    if ! command -v snap &> /dev/null; then
         echo "snapd is not installed"
         while true; do
-            read -p "Do you want to install snapd? [y/n] " snapd_install
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
+            read -p "Do you want to install snapd? [y/n] " answer
+            if [[ $answer =~ ^[Yy]$ ]]; then
                 sudo dnf install -y snapd
                 sudo ln -s /var/lib/snapd/snap /snap
                 echo "snapd installed successfully"
                 return 0
-                elif [[ $REPLY =~ ^[Nn]$ ]]; then
+                elif [[ $answer =~ ^[Nn]$ ]]; then
                 echo "Skipping snapd installation"
                 return 1
             else
-                echo ""
+                echo "Invalid input. Please enter either 'y' or 'n'."
             fi
         done
     else
+        echo "snapd is already installed"
         return 0
     fi
 }
 
+check_installation_success() {
+    if [ $? -eq 0 ]; then
+        echo "Installation successful"
+        return 0
+    else
+        echo "Installation failed"
+        return 1
+    fi
+}
 
+install_smalltalk() {
+    curl -O https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz
+    tar xf smalltalk-3.2.5.tar.xz
+    cd smalltalk-3.2.5/
+    ./configure
+    make
+    sudo make install
+    check_installation_success
+    if [ $? -eq 0 ]; then
+        sudo rm -rf smalltalk-3.2.5
+        sudo rm smalltalk-3.2.5.tar.xz
+    else
+        echo "Smalltalk installation failed"
+    fi
+}
 
 # Function to install everything
 install_everything() {
@@ -125,6 +154,7 @@ install_everything() {
         read -p "Are you sure you want to install everything? (y/n) " answer
         if [ "$answer" = "y" -o "$answer" = "Y" ]; then
             echo "Installing everything"
+            break
             elif [ "$answer" = "n" -o "$answer" = "N" ]; then
             echo "Returning to main menu"
             return
@@ -135,134 +165,122 @@ install_everything() {
     
     # Install Ada
     sudo dnf install fedora-gnat-project-common gprbuild gcc-gnat
-    
+    check_installation_success
     # Install Assembly
     sudo dnf install nasm
-    
-    # Install Basic
-    sudo dnf install gnu-basic
-    
+    check_installation_success
     # Install Brainfuck
     sudo dnf install brainfuck
-    
+    check_installation_success
     # Install C and C++
     sudo dnf install gcc
+    check_installation_success
     sudo dnf install gcc-c++
+    check_installation_success
     sudo dnf install clang
-    
+    check_installation_success
     # Install C#
     sudo dnf install mono-devel
+    check_installation_success
     sudo dnf install dotnet-sdk-7.0
-    
+    check_installation_success
     # Install Clojure
     sudo dnf install clojure
-    
+    check_installation_success
     # Install D
     sudo dnf install dub
-    
+    check_installation_success
     # Install Delphi
     sudo dnf install fpc
-    
+    check_installation_success
     # Install Elixir
     sudo dnf install elixir
-    
+    check_installation_success
     # Install Erlang
     sudo dnf install erlang
-    
+    check_installation_success
     # Install F#
     echo "Dotnet already installed"
-    
     # Install Flutter
     sudo snap install flutter --classic
-    
+    check_installation_success
     # Install Fortran
     sudo dnf install gfortran
-    
+    check_installation_success
     # Install Go
     sudo dnf install golang
-    
+    check_installation_success
     # Install Haskell-Platform
     sudo dnf install haskell-platform
-    
+    check_installation_success
     # Install Java
     echo "Openjdk already installed"
-    
     # Install JQuery
     sudo dnf install js-jquery
-    
+    check_installation_success
     # Install Julia
     sudo dnf install julia
-    
+    check_installation_success
     # Install Kotlin
     sudo snap install kotlin --classic
-    
+    check_installation_success
     # Install Lisp
     sudo dnf install sbcl
-    
+    check_installation_success
     # Install Lua
     sudo dnf install lua
-    
+    check_installation_success
     # Install OCaml
     sudo dnf install opam
-    
+    check_installation_success
     # Install Pascal
-    sudo dnf install fpc
-    
+    echo "fpc already installed"
     # Install Perl
     sudo dnf install perl
-    
+    check_installation_success
     # Install PHP
     sudo dnf install php
-    
+    check_installation_success
     # Install Prolog
     sudo snap install swi-prolog
-    
+    check_installation_success
     # Install Python
     sudo dnf install python312
-    
+    check_installation_success
     # Install R
     sudo dnf install R
-    
+    check_installation_success
     # Install Ruby
     sudo dnf install ruby
-    
+    check_installation_success
     # Install Rust
     sudo dnf install rust cargo
-    
+    check_installation_success
     # Install Scala
     sudo dnf install scala
-    
+    check_installation_success
     # Install Smalltalk
-    curl -O https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz
-    tar xf smalltalk-3.2.5.tar.xz
-    cd smalltalk-3.2.5/
-    ./configure
-    make
-    sudo make install
-    cd ..
-    
+    install_smalltalk
     # Install Swift
     sudo dnf install swift-lang
-    
+    check_installation_success
     # Install TypeScript
     sudo dnf install typescript
-    
+    check_installation_success
     # Install Zig
     sudo dnf copr enable sentry/zig
     sudo dnf install zig
-    
+    check_installation_success
     return 0
     
 }
 
-check_installation_success() {
-    if [ $? -eq 0 ]; then
-        echo "Installation successful"
-        return 0
-    else
-        echo "Installation failed"
-        return 1
-    fi
+printLanguages() {
+    languages=("Ada" "Assembly" "Brainfuck" "C and C++" "C#" "Clojure" "D" "Delphi" "Elixir" "Erlang" "F#" "Flutter" "Fortran" "Go(lang)" "Haskell" "Java" "JQuery" "Julia" "Kotlin" "Lisp" "Lua" "Nim" "Nodejs" "OCaml" "Pascal" "Perl" "PHP" "PostgreSql" "Prolog" "Python" "R" "Ruby" "Rust" "Scala" "Smalltalk" "Swift" "TypeScript" "Zig")
+    sorted_languages=($(printf '%s\n' "${languages[@]}" | sort))
+    for language in "${sorted_languages[@]}"; do
+        printf "%s\n" "$language"
+    done
 }
 
 while true; do
@@ -281,11 +299,6 @@ while true; do
         sudo dnf install nasm
         check_installation_success
         
-        # Install Basic
-        elif [ "$language" = "basic" -o "$language" = "Basic" -o "$language" = "bc" -o "$language" = "BC" ]; then
-        sudo dnf install gnu-basic
-        check_installation_success
-        
         # Install Brainfuck
         elif [ "$language" = "Brainfuck" -o "$language" = "brainfuck" ]; then
         sudo dnf install brainfuck
@@ -298,11 +311,11 @@ while true; do
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc
                 echo "GCC installed successfully"
-                
+                break
                 elif [ "$compiler" = "clang" -o "$compiler" = "Clang" ]; then
                 sudo dnf install clang
                 echo "Clang installed successfully"
-                
+                break
             else
                 echo "Invalid compiler choice"
             fi
@@ -315,10 +328,11 @@ while true; do
             if [ "$compiler" = "gcc" -o "$compiler" = "GCC" ]; then
                 sudo dnf install gcc-c++
                 check_installation_success
-                
+                break
                 elif [ "$compiler" = "clang" -o "$compiler" = "Clang" ]; then
                 sudo dnf install clang
                 check_installation_success
+                break
             else
                 echo "Invalid compiler choice"
             fi
@@ -338,11 +352,11 @@ while true; do
                     if [ "$version" = "6" ]; then
                         sudo dnf install dotnet-sdk-6.0
                         check_installation_success
-                        
+                        break
                         elif [ "$version" = "7" ]; then
                         sudo dnf install dotnet-sdk-7.0
                         check_installation_success
-                        
+                        break
                     else
                         echo "Invalid version choice"
                     fi
@@ -383,9 +397,10 @@ while true; do
             if [ "$ide" = "y" -o "$ide" = "Y" ]; then
                 sudo dnf install lazarus
                 check_installation_success
-                
+                break
                 elif [ "$ide" = "n" -o "$ide" = "N" ]; then
                 echo "Skipping Lazarus installation"
+                break
             else
                 echo "Invalid choice"
             fi
@@ -408,11 +423,11 @@ while true; do
             if [ "$version" = "6" ]; then
                 sudo dnf install dotnet-sdk-6.0
                 check_installation_success
-                
+                break
                 elif [ "$version" = "7" ]; then
                 sudo dnf install dotnet-sdk-7.0
                 check_installation_success
-                echo "F# installed successfully"
+                break
             else
                 echo "Invalid version choice"
             fi
@@ -451,10 +466,11 @@ while true; do
                 echo "Installing ghc"
                 sudo dnf install ghc
                 check_installation_success
-                
+                break
                 elif [ "$stack" = "haskell-platform" -o "$stack" = "Haskell-platform" ]; then
                 sudo dnf install haskell-platform
                 check_installation_success
+                break
             else
                 echo "Invalid choice"
             fi
@@ -468,9 +484,11 @@ while true; do
                 # Install Openjdk
                 sudo dnf install java-latest-openjdk
                 check_installation_success
+                break
                 elif [ "$jdk" = "openjdk-devel" -o "$jdk" = "Openjdk-devel" ]; then
                 sudo dnf install java-latest-openjdk-devel
                 check_installation_success
+                break
             else
                 echo "Invalid choice"
             fi
@@ -597,6 +615,13 @@ while true; do
         make
         sudo make install
         check_installation_success
+        if [ $? -eq 0 ]; then
+            cd ..
+            sudo rm -r smalltalk-3.2.5
+            sudo rm smalltalk-3.2.5.tar.xz
+        else
+            echo ""
+        fi
         
         # Install Swift
         elif [[ $language == Swift* || $language == swift ]]; then
@@ -618,10 +643,64 @@ while true; do
         elif [ "$language" = "install-all" ]; then
         install_everything
         check_installation_success
-        break
+        
+        elif [ "$language" = "autoinstall-all" ]; then
+        read -p "Are you sure you want to autoinstall all languages? [y/n] " install
+        if [[ $answer =~ ^[Yy]$ ]]; then
+            sudo dnf install -y tar #tar
+            sudo dnf install -y make #make
+            sudo dnf install -y curl #curl
+            sudo dnf install -y java-latest-openjdk-devel #java
+            sudo dnf install -y fedora-gnat-project-common gprbuild gcc-gnat #ada
+            sudo dnf install -y nasm #assembly
+            sudo dnf install -y brainfuck #brainfuck
+            sudo dnf install -y gcc #c
+            sudo dnf install -y gcc-c++ #c++
+            sudo dnf install -y clang #c/c++
+            sudo dnf install -y mono-devel #c#
+            sudo dnf install -y dotnet-sdk-7.0 #dotnet
+            sudo dnf install -y clojure #clojure
+            sudo dnf install -y dub #d
+            sudo dnf install -y fpc #delphi, pascal
+            sudo dnf install -y elixir #elixir
+            sudo dnf install -y erlang #erlang
+            sudo dnf install -y gfortran #fortran
+            sudo dnf install -y golang #go
+            sudo dnf install -y haskell-platform #haskell
+            sudo dnf install -y js-jquery #jquery
+            sudo dnf install -y julia #julia
+            sudo dnf install -y sbcl #lisp
+            sudo dnf install -y lua #lua
+            sudo dnf install -y opam #ocaml
+            sudo dnf install -y perl #perl
+            sudo dnf install -y php #php
+            sudo dnf install -y swi-prolog #prolog
+            sudo dnf install -y python312 #python
+            sudo dnf install -y R #r
+            sudo dnf install -y ruby #ruby
+            sudo dnf install -y rust cargo #rust
+            sudo dnf install -y scala #scala
+            sudo dnf install -y swift-lang #swift
+            sudo dnf install -y typescript #typescript
+            sudo dnf -y copr enable sentry/zig
+            sudo dnf install -y zig #zig
+            install_smalltalk
+            sudo dnf install -y snapd #snap
+            sudo ln -s /var/lib/snapd/snap /snap
+            snap install -y flutter --classic #flutter
+            snap install -y kotlin --classic #kotlin
+            check_installation_success
+            elif [[ $answer =~ ^[Nn]$ ]]; then
+            echo "Returning to main menu"
+        else
+            echo "Invalid input"
+        fi
+        
+        elif [ "$language" = "showall" ]; then
+        printLanguages
         
         
-        elif [ "$language" = "quit" -o "$language" = "Quit" -o "$language" = "q" -o "$language" = "Q" -o "$language" = "exit" -o "$language" = "Exit" -o "$language" = "e" -o "$language" = "E" ]; then
+        elif [ "$language" = "quit" -o "$language" = "Quit" -o "$language" = "exit" -o "$language" = "Exit" ]; then
         break
     else
         echo "Language not available or wrong input"

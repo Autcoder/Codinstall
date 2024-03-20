@@ -4,7 +4,8 @@ Quicklang is a Bash script that simplifies the installation of programming langu
 
 ## Getting Started
 
-**Download the script**
+#### Download the script
+
 There are two ways to download the script:
 
 - Go to the Releases and choose the latest release compatible with your package manager (e.g. dnf, apt). This is recommended when you just want to use the script.
@@ -14,10 +15,12 @@ There are two ways to download the script:
 git clone https://github.com/Autcoder/Auto-languages-installer.git
 ```
 
-**Navigate to the Script Directory**
+#### Navigate to the Script Directory
+
 Open a terminal and navigate to the directory where the Quicklang script is located, or directly open a terminal in that directory.
 
-**Run the Script**
+#### Run the Script
+
 Execute the Quicklang script by typing the following command in the terminal:
 
 ```
