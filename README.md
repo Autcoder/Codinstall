@@ -96,6 +96,10 @@ Be sure to sent feedback for the script. Feature suggestions/requests, bugs, jus
 
 
 ## Changelog
+#### Version 1.2
+- Added apt support
+- Updated Dotnet SDK options to 7 and 8
+- Minor fixes
 
 #### Version 1.1
 - Fixed a bug that caused getting stuck in a infinite loop
