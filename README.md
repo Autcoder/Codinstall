@@ -39,7 +39,7 @@ Quicklang will ask you what language you want to install. Just type the name and
 
 + If you want to install all, or just go through them like a list, type "install-all" and press enter
 
-+ If you want to install all the languages automatically, you can type "autoinstall-all" and press enter. 
++ If you want to install all the languages automatically, you can type "autoinstall-all" and press enter.\
   !!! This will install every available language + dependencies (tar, make, curl, snap) automatically, so only do this when you are sure you want that!
 
 + To see all the available languages, just  type "showall" and press enter
@@ -51,7 +51,7 @@ To exit the script, type "exit" or "quit" and press Enter.
 #### Supported Languages
 
 Quicklang currently supports the installation of the following programming languages:
-+ Ada
+- Ada
 - Assembly
 - Brainfuck
 - C
