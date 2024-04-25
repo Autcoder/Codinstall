@@ -99,6 +99,7 @@ Be sure to sent feedback for the script. Feature suggestions/requests, bugs, jus
 #### Version 1.2
 - Added apt support
 - Updated Dotnet SDK options to 7 and 8
+- Added support for ruby-devel
 - Minor fixes
 
 #### Version 1.1
