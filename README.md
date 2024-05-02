@@ -98,8 +98,8 @@ Be sure to sent feedback for the script. Feature suggestions/requests, bugs, jus
 ## Changelog
 #### Version 1.2
 - Added apt support
-- Updated Dotnet SDK options to 7 and 8
 - Added support for ruby-devel
+- Updated Dotnet SDK options to 7 and 8
 - Minor fixes
 
 #### Version 1.1
