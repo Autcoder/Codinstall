@@ -1,0 +1,44 @@
+sudo apt install gnat
+sudo apt install nasm
+sudo apt-get install libghc-brainfuck-dev
+sudo apt install gcc
+sudo apt install clang
+sudo apt-get install g++
+sudo apt install mono-devel
+sudo apt install dotnet-sdk-8.0
+sudo apt install clojure
+sudo apt install gcc-gdc
+sudo apt install dub
+sudo apt-get install dart
+sudo apt-get install fpc (sudo apt install lazarus)
+sudo apt-get install elixir
+sudo apt-get install erlang
+sudo snap install flutter --classic
+sudo apt install gfortran
+sudo apt install golang-go
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+sudo apt install libjs-jquery
+sudo apt install julia
+sudo snap install kotlin
+sudo apt-get install sbcl
+sudo apt install lua5.4
+curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+sudo apt-get install nodejs
+sudo apt install ocaml
+sudo apt-get install opam
+sudo apt-get install fp-compiler
+sudo apt install perl
+sudo apt install php libapache2-mod-php
+sudo apt install postgresql postgresql-contrib
+sudo apt-add-repository ppa:swi-prolog/stable
+sudo apt update
+sudo apt install swi-prolog
+sudo apt install python3.12 python3.12-venv
+sudo apt-get install r-base r-base-dev
+sudo apt install ruby-full
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo apt-get install swift
+sudo apt install node-typescript
+install_scala
+install_smalltalk
+install_zig
