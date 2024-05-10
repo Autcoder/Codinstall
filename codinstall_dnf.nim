@@ -328,6 +328,7 @@ proc installationProcess(lang:string) =
     else:
         echo fmt"Language {lang} not found"
 
+# Useless Comment to update
 let cmdlineArgs = commandLineParams()
 
 const minArgsRequired = 2
