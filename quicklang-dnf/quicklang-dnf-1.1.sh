@@ -605,7 +605,7 @@ while true; do
             sudo dnf install -y mono-devel #c#
             sudo dnf install -y dotnet-sdk-8.0 #dotnet
             sudo dnf install -y clojure #clojure
-            sudo dnf install -y dub #d
+            sudo dnf install -y gdc dub #d
             sudo dnf install -y fpc #delphi, pascal
             sudo dnf install -y elixir #elixir
             sudo dnf install -y erlang #erlang
