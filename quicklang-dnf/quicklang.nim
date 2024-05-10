@@ -1,9 +1,11 @@
 import os
 import strformat
 import algorithm
+import strutils
 
 # Dependency checking
 proc dependencyInstalled*(dep: string): bool =
+    var debinstall: string
     var cmd = fmt"{dep} --version"
     let dependency = execShellCmd(cmd)
     if dependency == 0:
@@ -14,30 +16,25 @@ proc dependencyInstalled*(dep: string): bool =
             echo "Do you want to install it? (y/n)"
             var answer = readLine(stdin)
             if answer == "y":
-                discard execShellCmd("sudo dnf install java-latest-openjdk")
-                return true
+                debinstall = dep
+                case debinstall
+                of "java":
+                    discard execShellCmd("sudo dnf install java-latest-openjdk")
+                    return true
+                of "snap":
+                    discard execShellCmd("sudo dnf install snapd")
+                    discard execShellCmd("sudo ln -s /var/lib/snapd/snap /snap")
+                    return true
+                of "tar", "make", "curl":
+                    let cmd = fmt"sudo dnf install {dep}"
+                    discard execShellCmd(cmd)
+                    return true
+                else:
+                    echo "Dependency not found."
             else:
+                echo "Skipping dependency installation."
                 return false
-        elif dep == "snap":
-            echo "Snap is not installed. It is needed to install the language."
-            echo "Do you want to install it? (y/n)"
-            var answer = readLine(stdin)
-            if answer == "y":
-                discard execShellCmd("sudo dnf install snapd")
-                discard execShellCmd("sudo ln -s /var/lib/snapd/snap /snap")
-                return true
-            else:
-                return false
-        else:
-            echo "Dependency not found: ", dep, ". It is needed to install the language."
-            echo "Do you want to install it? (y/n)"
-            var answer = readLine(stdin)
-            if answer == "y":
-                let cmd = fmt"sudo dnf install {dep}"
-                discard execShellCmd(cmd)
-                return true
-            else:
-                return false
+                    
 
 proc checkInstallationSuccess*(integer:int) =
     if integer == 0:
@@ -206,123 +203,132 @@ proc printLanguages*() =
 
 proc installationProcess() =
     while true:
-        echo "To exit, type exit or to see the list of languages, type showall"
+        echo "\nTo exit, type exit or to see the list of languages, type showall"
         echo "What language do you want install?"
-        var lang = readLine(stdin)
+        var lang = readLine(stdin).strip()
 
         if lang == "exit":
             break
         elif lang == "showall":
             printLanguages()
+            continue
         
-        if lang == "Ada" or lang == "ada":
+        case lang
+        of "Ada", "ada":
             installAda()
-        elif lang == "Assembly" or lang == "assembly":
+        of "Assembly", "assembly":
             installAssembly()
-        elif lang == "Brainfuck" or lang == "brainfuck":
+        of "Brainfuck", "brainfuck":
             installBrainfuck()
-        elif lang == "C" or lang == "c" or lang == "c++" or lang == "C++":
+        of "C", "c", "c++", "C++":
             echo "Do you want to install gcc or clang? [gcc/clang]"
             var option = readLine(stdin)
-            if option == "gcc":
+            case option
+            of "gcc":
                 installGCC()
-            elif option == "clang":
+            of "clang":
                 installClang()
             else:
-                echo "Invalid option"
-        elif lang == "C#" or lang == "c#" or lang == "Csharp" or lang == "CSharp":
+                echo "Invalid option, please choose between gcc and clang"
+        of "C#", "c#", "Csharp", "CSharp":
             echo "Do you want to install mono or dotnet? [mono/dotnet]"
             var option = readLine(stdin)
-            if option == "mono":
+            case option
+            of "mono":
                 installMonoDevel()
-            elif option == "dotnet":
+            of "dotnet":
                 echo "Which version do you want to install? [6/8]"
                 var version = readLine(stdin)
-                if version == "6":
+                case version
+                of "6":
                     installDotnet(6)
-                elif version == "8":
+                of "8":
                     installDotnet(8)
                 else:
-                    echo "Invalid option"
-        elif lang == "Clojure" or lang == "clojure":
+                    echo "Invalid option, please choose between 6 and 8"
+            else:
+                echo "Invalid option, please choose between mono and dotnet"
+        of "Clojure", "clojure":
             installClojure()
-        elif lang == "D" or lang == "d":
+        of "D", "d":
             installD()
-        elif lang == "Delphi" or lang == "delphi":
+        of "Delphi", "delphi":
             installFPC()
-        elif lang == "Elixir" or lang == "elixir":
+        of "Elixir", "elixir":
             installElixir()
-        elif lang == "Erlang" or lang == "erlang":
+        of "Erlang", "erlang":
             installErlang()
-        elif lang == "F#" or lang == "f#" or lang == "fsharp" or lang == "FSharp":
+        of "F#", "f#", "fsharp", "FSharp":
             echo "Which version of Dotnet do you want to install? [6/8]"
             var version = readLine(stdin)
-            if version == "6":
+            case version
+            of "6":
                 installDotnet(6)
-            elif version == "8":
+            of "8":
                 installDotnet(8)
             else:
-                echo "Invalid option"
-        elif lang == "Flutter" or lang == "flutter":
+                echo "Invalid option, please choose between 6 and 8"
+        of "Flutter", "flutter":
             installSnapPackage("Flutter")
-        elif lang == "Fortran" or lang == "fortran":
+        of "Fortran", "fortran":
             installFortran()
-        elif lang == "Golang" or lang == "golang" or lang == "Go" or lang == "go":
+        of "Golang", "golang", "Go", "go":
             installGolang()
-        elif lang == "Haskell" or lang == "haskell":
+        of "Haskell", "haskell":
             installHaskell()
-        elif lang == "Java" or lang == "java"  or lang == "openjdk" or lang == "Openjdk":
+        of "Java", "java", "openjdk", "Openjdk":
             echo "Do you want to install opdnjdk or openjdk-devel? [jdk/devel]"
             var option = readLine(stdin)
-            if option == "jdk":
+            case option
+            of "jdk":
                 installJava("jdk")
-            elif option == "devel":
+            of "devel":
                 installJava("devel")
             else:
-                echo "Invalid option"
-        elif lang == "JQuery" or lang == "jquery":
+                echo "Invalid option, please choose between jdk and devel"
+        of "JQuery", "jquery":
             installJQuery()
-        elif lang == "Julia" or lang == "julia":
+        of "Julia", "julia":
             installJulia()
-        elif lang == "Kotlin" or lang == "kotlin":
+        of "Kotlin", "kotlin":
             installSnapPackage("Kotlin")
-        elif lang == "Lisp" or lang == "lisp":
+        of "Lisp", "lisp":
             installLisp()
-        elif lang == "Lua" or lang == "lua":
+        of "Lua", "lua":
             installLua()
-        elif lang == "Nim" or lang == "nim":
+        of "Nim", "nim":
             installNim()
-        elif lang == "Nodejs" or lang == "nodejs":
+        of "Nodejs", "nodejs":
             installNodejs()
-        elif lang == "OCaml" or lang == "ocaml":
+        of "OCaml", "ocaml":
             installOCaml()
-        elif lang == "Pascal" or lang == "pascal":
+        of "Pascal", "pascal":
             installFPC()
-        elif lang == "Perl" or lang == "perl":
+        of "Perl", "perl":
             installPerl()
-        elif lang == "PHP" or lang == "php":
+        of "PHP", "php":
             installPHP()
-        elif lang == "PostgreSql" or lang == "postgresql" or lang == "Postgresql":
+        of "PostgreSql", "postgresql", "Postgresql":
             installPostgreSql()
-        elif lang == "Prolog" or lang == "prolog":
+        of "Prolog", "prolog":
             installProlog()
-        elif lang == "Python" or lang == "python":
+        of "Python", "python":
             installPython()
-        elif lang == "R" or lang == "r":
+        of "R", "r":
             installR()
-        elif lang == "Ruby" or lang == "ruby":
+        of "Ruby", "ruby":
             installRuby("ruby")
-        elif lang == "Rust" or lang == "rust":
+        of "Rust", "rust":
             installRust()
-        elif lang == "Scala" or lang == "scala":
+        of "Scala", "scala":
             installScala("x86")
-        elif lang == "Smalltalk" or lang == "smalltalk":
+        of "Smalltalk", "smalltalk":
             installSmalltalk()
-        elif lang == "Swift" or lang == "swift":
+        of "Swift", "swift":
             installSwift()
-        elif lang == "TypeScript" or lang == "typescript":
+        of "TypeScript", "typescript":
             installTypeScript()
-        elif lang == "Zig" or lang == "zig":
+        of "Zig", "zig":
             installZig()
         else:
             echo "Language not found"
