@@ -43,6 +43,7 @@ To use the script globally, follow these steps:
   alias codinstall='~/your_path_to_script/codinstall'
   ```
 5. Replace "your_path_to_script" with your own path to where the script is located.
+   Also replace "codinstall" with whatever name your installed script has.
    Make sure this file does not get moved, otherwise it wont find the script anymore!
 6. (optional) Replace alias "codinstall" with whatever command you want to use when calling the script.
 
