@@ -1,4 +1,4 @@
-import os
+import std/os
 import strformat
 import algorithm
 import strutils
@@ -201,65 +201,38 @@ proc printLanguages*() =
     for language in sorted(languages):
         echo language
 
-proc installationProcess() =
-    while true:
-        echo "\nTo exit, type exit or to see the list of languages, type showall"
-        echo "What language do you want install?"
-        var lang = readLine(stdin).strip()
-
-        if lang == "exit":
-            break
-        elif lang == "showall":
-            printLanguages()
-            continue
-        
-        case lang
-        of "Ada", "ada":
-            installAda()
-        of "Assembly", "assembly":
-            installAssembly()
-        of "Brainfuck", "brainfuck":
-            installBrainfuck()
-        of "C", "c", "c++", "C++":
-            echo "Do you want to install gcc or clang? [gcc/clang]"
-            var option = readLine(stdin)
-            case option
-            of "gcc":
-                installGCC()
-            of "clang":
-                installClang()
-            else:
-                echo "Invalid option, please choose between gcc and clang"
-        of "C#", "c#", "Csharp", "CSharp":
-            echo "Do you want to install mono or dotnet? [mono/dotnet]"
-            var option = readLine(stdin)
-            case option
-            of "mono":
-                installMonoDevel()
-            of "dotnet":
-                echo "Which version do you want to install? [6/8]"
-                var version = readLine(stdin)
-                case version
-                of "6":
-                    installDotnet(6)
-                of "8":
-                    installDotnet(8)
-                else:
-                    echo "Invalid option, please choose between 6 and 8"
-            else:
-                echo "Invalid option, please choose between mono and dotnet"
-        of "Clojure", "clojure":
-            installClojure()
-        of "D", "d":
-            installD()
-        of "Delphi", "delphi":
-            installFPC()
-        of "Elixir", "elixir":
-            installElixir()
-        of "Erlang", "erlang":
-            installErlang()
-        of "F#", "f#", "fsharp", "FSharp":
-            echo "Which version of Dotnet do you want to install? [6/8]"
+proc installationProcess(lang:string) =
+    if lang == "exit":
+        quit(0)
+    elif lang == "showall":
+        printLanguages()
+        return
+    
+    case lang
+    of "Ada", "ada":
+        installAda()
+    of "Assembly", "assembly":
+        installAssembly()
+    of "Brainfuck", "brainfuck":
+        installBrainfuck()
+    of "C", "c", "c++", "C++":
+        echo "Do you want to install gcc or clang? [gcc/clang]"
+        var option = readLine(stdin)
+        case option
+        of "gcc":
+            installGCC()
+        of "clang":
+            installClang()
+        else:
+            echo "Invalid option, please choose between gcc and clang"
+    of "C#", "c#", "Csharp", "CSharp":
+        echo "Do you want to install mono or dotnet? [mono/dotnet]"
+        var option = readLine(stdin)
+        case option
+        of "mono":
+            installMonoDevel()
+        of "dotnet":
+            echo "Which version do you want to install? [6/8]"
             var version = readLine(stdin)
             case version
             of "6":
@@ -268,70 +241,104 @@ proc installationProcess() =
                 installDotnet(8)
             else:
                 echo "Invalid option, please choose between 6 and 8"
-        of "Flutter", "flutter":
-            installSnapPackage("Flutter")
-        of "Fortran", "fortran":
-            installFortran()
-        of "Golang", "golang", "Go", "go":
-            installGolang()
-        of "Haskell", "haskell":
-            installHaskell()
-        of "Java", "java", "openjdk", "Openjdk":
-            echo "Do you want to install opdnjdk or openjdk-devel? [jdk/devel]"
-            var option = readLine(stdin)
-            case option
-            of "jdk":
-                installJava("jdk")
-            of "devel":
-                installJava("devel")
-            else:
-                echo "Invalid option, please choose between jdk and devel"
-        of "JQuery", "jquery":
-            installJQuery()
-        of "Julia", "julia":
-            installJulia()
-        of "Kotlin", "kotlin":
-            installSnapPackage("Kotlin")
-        of "Lisp", "lisp":
-            installLisp()
-        of "Lua", "lua":
-            installLua()
-        of "Nim", "nim":
-            installNim()
-        of "Nodejs", "nodejs":
-            installNodejs()
-        of "OCaml", "ocaml":
-            installOCaml()
-        of "Pascal", "pascal":
-            installFPC()
-        of "Perl", "perl":
-            installPerl()
-        of "PHP", "php":
-            installPHP()
-        of "PostgreSql", "postgresql", "Postgresql":
-            installPostgreSql()
-        of "Prolog", "prolog":
-            installProlog()
-        of "Python", "python":
-            installPython()
-        of "R", "r":
-            installR()
-        of "Ruby", "ruby":
-            installRuby("ruby")
-        of "Rust", "rust":
-            installRust()
-        of "Scala", "scala":
-            installScala("x86")
-        of "Smalltalk", "smalltalk":
-            installSmalltalk()
-        of "Swift", "swift":
-            installSwift()
-        of "TypeScript", "typescript":
-            installTypeScript()
-        of "Zig", "zig":
-            installZig()
         else:
-            echo "Language not found"
+            echo "Invalid option, please choose between mono and dotnet"
+    of "Clojure", "clojure":
+        installClojure()
+    of "D", "d":
+        installD()
+    of "Delphi", "delphi":
+        installFPC()
+    of "Elixir", "elixir":
+        installElixir()
+    of "Erlang", "erlang":
+        installErlang()
+    of "F#", "f#", "fsharp", "FSharp":
+        echo "Which version of Dotnet do you want to install? [6/8]"
+        var version = readLine(stdin)
+        case version
+        of "6":
+            installDotnet(6)
+        of "8":
+            installDotnet(8)
+        else:
+            echo "Invalid option, please choose between 6 and 8"
+    of "Flutter", "flutter":
+        installSnapPackage("Flutter")
+    of "Fortran", "fortran":
+        installFortran()
+    of "Golang", "golang", "Go", "go":
+        installGolang()
+    of "Haskell", "haskell":
+        installHaskell()
+    of "Java", "java", "openjdk", "Openjdk":
+        echo "Do you want to install opdnjdk or openjdk-devel? [jdk/devel]"
+        var option = readLine(stdin)
+        case option
+        of "jdk":
+            installJava("jdk")
+        of "devel":
+            installJava("devel")
+        else:
+            echo "Invalid option, please choose between jdk and devel"
+    of "JQuery", "jquery":
+        installJQuery()
+    of "Julia", "julia":
+        installJulia()
+    of "Kotlin", "kotlin":
+        installSnapPackage("Kotlin")
+    of "Lisp", "lisp":
+        installLisp()
+    of "Lua", "lua":
+        installLua()
+    of "Nim", "nim":
+        installNim()
+    of "Nodejs", "nodejs":
+        installNodejs()
+    of "OCaml", "ocaml":
+        installOCaml()
+    of "Pascal", "pascal":
+        installFPC()
+    of "Perl", "perl":
+        installPerl()
+    of "PHP", "php":
+        installPHP()
+    of "PostgreSql", "postgresql", "Postgresql":
+        installPostgreSql()
+    of "Prolog", "prolog":
+        installProlog()
+    of "Python", "python":
+        installPython()
+    of "R", "r":
+        installR()
+    of "Ruby", "ruby":
+        installRuby("ruby")
+    of "Rust", "rust":
+        installRust()
+    of "Scala", "scala":
+        installScala("x86")
+    of "Smalltalk", "smalltalk":
+        installSmalltalk()
+    of "Swift", "swift":
+        installSwift()
+    of "TypeScript", "typescript":
+        installTypeScript()
+    of "Zig", "zig":
+        installZig()
+    else:
+        echo fmt"Language {lang} not found"
 
-# Call the function
-installationProcess()
+let cmdlineArgs = commandLineParams()
+
+const minArgsRequired = 2
+if cmdlineArgs.len < minArgsRequired:
+    echo "Usage: quicklang <language1> <language2> ..."
+    quit(1)
+
+for lang in cmdlineArgs:
+    if lang.len == 0 or lang.isEmptyOrWhitespace:
+        echo "Error: Language name cannot be empty or whitespace: ", lang
+        raise newException(IOError, "Invalid language name")
+
+    echo "\n" & fmt"Installing {lang}..."
+    installationProcess(lang)
