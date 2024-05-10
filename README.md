@@ -29,6 +29,7 @@ To use the script locally, follow these steps:
    ./codinstall <language1> <language2> ...
    ```
 Put in as many languages as you want. It will go through them one by one.
+Be sure to use the correct name of "ocdinstall" (e.g. codinstall_dnf).
 
 ### Globally
 To use the script globally, follow these steps:
@@ -43,7 +44,7 @@ To use the script globally, follow these steps:
   alias codinstall='~/your_path_to_script/codinstall'
   ```
 5. Replace "your_path_to_script" with your own path to where the script is located.
-   Also replace "codinstall" with whatever name your installed script has.
+   Also replace "codinstall" with whatever name your installed script has (e.g. codinstall_dnf).
    Make sure this file does not get moved, otherwise it wont find the script anymore!
 6. (optional) Replace alias "codinstall" with whatever command you want to use when calling the script.
 
