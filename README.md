@@ -107,6 +107,6 @@ Be sure to sent feedback for the script. Feature suggestions/requests, bugs, jus
 
 ## Changelog
 #### Version 1.0
-Rewritten Quicklang in Nim
+Rewritten Codinstall in Nim
 - New way of Using
 - Performance + User experience Improvements
