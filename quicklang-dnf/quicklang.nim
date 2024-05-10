@@ -333,4 +333,5 @@ proc installationProcess() =
         else:
             echo "Language not found"
 
+# Call the function
 installationProcess()
