@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Functions to check if dependencies are installed
 check_tar() {
     echo "Checking if tar is installed..."
@@ -145,7 +144,12 @@ install_smalltalk() {
 # Function to install everything
 install_everything() {
     # Install Dependencies
-    sudo dnf install tar make curl java-latest-openjdk snapd
+    check_curl
+    check_make
+    check_tar
+    check_openjdk
+    check_snapd
+    check_installation_success
     echo "Dependencies Installed"
     
     echo "Starting installation of everything"
@@ -163,116 +167,41 @@ install_everything() {
         fi
     done
     
-    # Install Ada
-    sudo dnf install fedora-gnat-project-common gprbuild gcc-gnat
-    check_installation_success
-    # Install Assembly
-    sudo dnf install nasm
-    check_installation_success
-    # Install Brainfuck
-    sudo dnf install brainfuck
-    check_installation_success
-    # Install C and C++
-    sudo dnf install gcc
-    check_installation_success
-    sudo dnf install gcc-c++
-    check_installation_success
-    sudo dnf install clang
-    check_installation_success
-    # Install C#
-    sudo dnf install mono-devel
-    check_installation_success
-    sudo dnf install dotnet-sdk-7.0
-    check_installation_success
-    # Install Clojure
-    sudo dnf install clojure
-    check_installation_success
-    # Install D
-    sudo dnf install dub
-    check_installation_success
-    # Install Delphi
-    sudo dnf install fpc
-    check_installation_success
-    # Install Elixir
-    sudo dnf install elixir
-    check_installation_success
-    # Install Erlang
-    sudo dnf install erlang
-    check_installation_success
-    # Install F#
-    echo "Dotnet already installed"
-    # Install Flutter
-    sudo snap install flutter --classic
-    check_installation_success
-    # Install Fortran
-    sudo dnf install gfortran
-    check_installation_success
-    # Install Go
-    sudo dnf install golang
-    check_installation_success
-    # Install Haskell-Platform
-    sudo dnf install haskell-platform
-    check_installation_success
-    # Install Java
-    echo "Openjdk already installed"
-    # Install JQuery
-    sudo dnf install js-jquery
-    check_installation_success
-    # Install Julia
-    sudo dnf install julia
-    check_installation_success
-    # Install Kotlin
-    sudo snap install kotlin --classic
-    check_installation_success
-    # Install Lisp
-    sudo dnf install sbcl
-    check_installation_success
-    # Install Lua
-    sudo dnf install lua
-    check_installation_success
-    # Install OCaml
-    sudo dnf install opam
-    check_installation_success
-    # Install Pascal
-    echo "fpc already installed"
-    # Install Perl
-    sudo dnf install perl
-    check_installation_success
-    # Install PHP
-    sudo dnf install php
-    check_installation_success
-    # Install Prolog
-    sudo snap install swi-prolog
-    check_installation_success
-    # Install Python
-    sudo dnf install python312
-    check_installation_success
-    # Install R
-    sudo dnf install R
-    check_installation_success
-    # Install Ruby
-    sudo dnf install ruby
-    check_installation_success
-    # Install Rust
-    sudo dnf install rust cargo
-    check_installation_success
-    # Install Scala
-    sudo dnf install scala
-    check_installation_success
-    # Install Smalltalk
-    install_smalltalk
-    # Install Swift
-    sudo dnf install swift-lang
-    check_installation_success
-    # Install TypeScript
-    sudo dnf install typescript
-    check_installation_success
-    # Install Zig
-    sudo dnf copr enable sentry/zig
-    sudo dnf install zig
-    check_installation_success
-    return 0
+    sudo dnf install -y \
+    gcc \
+    gcc-c++ \
+    clang \
+    mono-devel \
+    dotnet-sdk-7.0 \
+    clojure \
+    dub \
+    fpc \
+    erlang \
+    elixir \
+    gfortran \
+    golang \
+    haskell-platform \
+    js-jquery \
+    julia \
+    kotlin \
+    lua \
+    opam \
+    perl \
+    php \
+    R \
+    ruby \
+    rust \
+    scala \
+    swift \
+    typescript \
+    zig
     
+    sudo snap install flutter --classic
+    sudo snap install kotlin --classic
+    sudo snap install swi-prolog
+    
+    install_smalltalk
+    return 0
 }
 
 printLanguages() {
@@ -349,12 +278,12 @@ while true; do
                 elif [ "$runtime" = "netcore" -o "$runtime" = "Netcore" ]; then
                 read -p "Do you want to install version 6 or 7? [6/7] " version
                 while true; do
-                    if [ "$version" = "6" ]; then
-                        sudo dnf install dotnet-sdk-6.0
+                    if [ "$version" = "7" ]; then
+                        sudo dnf install dotnet-sdk-7.0
                         check_installation_success
                         break
-                        elif [ "$version" = "7" ]; then
-                        sudo dnf install dotnet-sdk-7.0
+                        elif [ "$version" = "8" ]; then
+                        sudo dnf install dotnet-sdk-8.0
                         check_installation_success
                         break
                     else
@@ -418,14 +347,14 @@ while true; do
         
         # Install F#
         elif [ "$language" = "F#" -o "$language" = "f#" ]; then
+        read -p "Do you want to install .Net Core 7 or 8? [7/8] " version
         while true; do
-            read -p "Do you want to install .Net Core 6 or 7? [6/7] " version
-            if [ "$version" = "6" ]; then
-                sudo dnf install dotnet-sdk-6.0
+            if [ "$version" = "7" ]; then
+                sudo dnf install dotnet-sdk-7.0
                 check_installation_success
                 break
-                elif [ "$version" = "7" ]; then
-                sudo dnf install dotnet-sdk-7.0
+                elif [ "$version" = "8" ]; then
+                sudo dnf install dotnet-sdk-8.0
                 check_installation_success
                 break
             else
@@ -454,27 +383,9 @@ while true; do
         sudo dnf install golang
         check_installation_success
         
-        # Install Groovy
+        # Install Haskell
         elif [ "$language" = "Haskell" -o "$language" = "haskell" ]; then
-        while true; do
-            read -p "Do you want to install stack or haskell-platform? [stack/haskell-platform] " stack
-            if [ "$stack" = "stack" -o "$stack" = "Stack" ]; then
-                # Installing Stack
-                sudo dnf install stack
-                check_installation_success
-                # Installing ghc
-                echo "Installing ghc"
-                sudo dnf install ghc
-                check_installation_success
-                break
-                elif [ "$stack" = "haskell-platform" -o "$stack" = "Haskell-platform" ]; then
-                sudo dnf install haskell-platform
-                check_installation_success
-                break
-            else
-                echo "Invalid choice"
-            fi
-        done
+        curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
         
         # Install Java
         elif [ "$language" = "java" -o "$language" = "Java" -o "$language" = "openjdk" -o "$language" = "Openjdk" ]; then
@@ -588,20 +499,54 @@ while true; do
         
         # Install Ruby
         elif [ "$language" = "Ruby" -o "$language" = "ruby" ]; then
-        sudo dnf install ruby
+        while true; do
+            read -p "Do you want to install ruby or ruby-devel? (ruby/ruby-devel) " ruby_or_ruby_devel
+            if [ "$ruby_or_ruby_devel" = "ruby" -o "$ruby_or_ruby_devel" = "Ruby" ]; then
+                sudo dnf install ruby
+                check_installation_success
+                break
+                elif [ "$ruby_or_ruby_devel" = "ruby-devel" -o "$ruby_or_ruby_devel" = "Ruby-devel" ]; then
+                sudo dnf install ruby-devel
+                check_installation_success
+                break
+            else
+                echo "Invalid input"
+            fi
+        done
+        
         check_installation_success
         
         # Install Rust
         elif [ "$language" = "Rust" -o "$language" = "rust" ]; then
-        sudo dnf install rust cargo
+        check_curl
+        if [ $? -eq 0 ]; then
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        else
+            echo "Skipping Rust installation"
+        fi
         check_installation_success
         
         # Install Scala
         elif [ "$language" = "Scala" -o "$language" = "scala" ]; then
         check_openjdk
         if [ $? -eq 0 ]; then
-            sudo dnf install scala
-            check_installation_success
+            check_curl
+            if [ $? -eq 0 ]; then
+                read -p "Do you want to install x86_64 scala or ARM64/aarch64 scala? [x86/ARM] " version
+                while true; do
+                    if [ "$version" = "x86" ]; then
+                        curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+                        check_installation_success
+                        break
+                        elif [ "$version" = "ARM" ]; then
+                        curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+                        check_installation_success
+                        break
+                    fi
+                done
+            else
+                echo "Skipping Scala installation"
+            fi
         else
             echo "Skipping Scala installation"
         fi
@@ -658,9 +603,9 @@ while true; do
             sudo dnf install -y gcc-c++ #c++
             sudo dnf install -y clang #c/c++
             sudo dnf install -y mono-devel #c#
-            sudo dnf install -y dotnet-sdk-7.0 #dotnet
+            sudo dnf install -y dotnet-sdk-8.0 #dotnet
             sudo dnf install -y clojure #clojure
-            sudo dnf install -y dub #d
+            sudo dnf install -y gdc dub #d
             sudo dnf install -y fpc #delphi, pascal
             sudo dnf install -y elixir #elixir
             sudo dnf install -y erlang #erlang
