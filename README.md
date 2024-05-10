@@ -17,7 +17,7 @@ git clone https://github.com/Autcoder/Quicklang.git
 
 
 ## Usage
-To use Quicklang there are two ways: Local Directory of Globally.
+To use Quicklang there are two ways: Local Directory or Globally.
 
 ### Local
 To use the script locally, follow these steps:
