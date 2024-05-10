@@ -2,6 +2,7 @@ import std/os
 import strformat
 import algorithm
 import strutils
+import re
 
 # Dependency checking
 proc dependencyInstalled*(dep: string): bool =
@@ -312,11 +313,26 @@ proc installationProcess(lang:string) =
     of "R", "r":
         installR()
     of "Ruby", "ruby":
-        installRuby("ruby")
+        echo "Do you want to install ruby or ruby-devel? [ruby/devel]"
+        var option = readLine(stdin)
+        case option
+        of "ruby":
+            installRuby("ruby")
+        of "devel":
+            installRuby("devel")
     of "Rust", "rust":
         installRust()
     of "Scala", "scala":
-        installScala("x86")
+        echo "Do you want to install it for x86_64 or aarch64/ARM? [x86/ARM]"
+        var option = readLine(stdin)
+        if option.match(re"^(ARM|arm)$"):
+            installScala("ARM")
+        if option.match(re"^(ARM|arm)$"):
+            installScala("ARM")
+        elif option == "x86":
+            installScala("x86")
+        else:
+            echo "Invalid option, please choose between x86 and ARM"
     of "Smalltalk", "smalltalk":
         installSmalltalk()
     of "Swift", "swift":

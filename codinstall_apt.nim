@@ -334,8 +334,10 @@ proc installationProcess(lang:string) =
         var option = readLine(stdin)
         if option.match(re"^(ARM|arm)$"):
             installScala("ARM")
-        else:
+        elif option == "x86":
             installScala("x86")
+        else:
+            echo "Invalid option, please choose between x86 and ARM"
     of "Smalltalk", "smalltalk":
         installSmalltalk()
     of "Swift", "swift":
