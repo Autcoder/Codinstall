@@ -145,7 +145,7 @@ proc installRuby(option:string) =
         checkInstallationSuccess(execShellCmd("sudo dnf install ruby-devel"))
 
 proc installRust() =
-    checkInstallationSuccess(execShellCmd("curl https://nim-lang.org/choosenim/init.sh -sSf | sh"))
+    checkInstallationSuccess(execShellCmd("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"))
 
 proc installScala(option:string) =
     var Curlisinstalled = dependencyInstalled("curl")
@@ -347,9 +347,9 @@ proc installationProcess(lang:string) =
 # Useless Comment to update
 let cmdlineArgs = commandLineParams()
 
-const minArgsRequired = 2
+const minArgsRequired = 1
 if cmdlineArgs.len < minArgsRequired:
-    echo "Usage: quicklang <language1> <language2> ..."
+    echo "Usage: codinstall <language1> <language2> ..."
     quit(1)
 
 for lang in cmdlineArgs:
