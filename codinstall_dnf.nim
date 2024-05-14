@@ -145,7 +145,7 @@ proc installRuby(option:string) =
         checkInstallationSuccess(execShellCmd("sudo dnf install ruby-devel"))
 
 proc installRust() =
-    checkInstallationSuccess(execShellCmd("sudo dnf install rust cargo"))
+    checkInstallationSuccess(execShellCmd("curl https://nim-lang.org/choosenim/init.sh -sSf | sh"))
 
 proc installScala(option:string) =
     var Curlisinstalled = dependencyInstalled("curl")
