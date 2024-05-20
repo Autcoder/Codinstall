@@ -108,6 +108,11 @@ Be sure to sent feedback for the script. Feature suggestions/requests, bugs, jus
 
 
 ## Changelog
+#### Version 1.1
+- Added somehow missed choosing options
+- fixed some other bugs
+- Performance improvements
+
 #### Version 1.0
 Rewritten Codinstall in Nim
 - New way of Using
