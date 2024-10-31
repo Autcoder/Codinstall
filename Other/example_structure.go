@@ -16,7 +16,7 @@ func getInstallCommand(language, manager, version string, commands map[string]st
 
 func main() {
 	// Example language and package manager data
-	pythonCommands := map[string]string{
+	pythonCommands := map[string]string{ // This would be in the JSON file
 		"apt":  "sudo apt install python{{version}}",
 		"yum":  "sudo yum install python{{version}}",
 		"dnf":  "sudo dnf install python{{version}}",
