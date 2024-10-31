@@ -70,6 +70,7 @@ This module loads and processes language data from the `language_data.json` conf
 ## 4. `executer/` - Command Execution and Installation
 
 The `executer` module is responsible for constructing and running installation commands based on the chosen language, package manager, version, and any customizations.
+It also stores the different install command templates for each package manager.
 
 **Functions and Purpose**:
 
@@ -84,6 +85,19 @@ The `executer` module is responsible for constructing and running installation c
   - Logs success or failure and provides feedback to the user.
 - **`VerifyInstallation(language string) bool`** (optional):
   - Checks if the installation was successful by verifying if the language binary is in the system path.
+
+**Command Templates**:
+Dictionsary of command templates for each package manager:
+
+```go
+// commandTemplates is a map of package managers to their respective command templates
+var commandTemplates = map[string]string{
+  "apt": "sudo apt install",
+  "yum": "sudo yum install",
+  "brew": "brew install",
+  // Add more package managers as needed
+  }
+```
 
 **Notes**:
 
@@ -103,19 +117,33 @@ This JSON file contains data on supported languages, including available version
   "languages": {
     "Python": {
       "versions": ["3.9", "3.10", "3.11"],
-      "customizations": {
-        "arch": ["x86", "ARM"]
-      },
-      "default_package_managers": ["apt", "yum", "brew"]
+      "available_package_managers": ["apt", "yum", "brew"],
+      "install_names": {
+        "apt": "python{{version}}",
+        "yum": "python{{version}}",
+        "dnf": "python{{version}}",
+        "brew": "python@{{version}}"
+      }
     },
     "C++": {
       "versions": ["11", "14", "17", "20"],
-      "command_alias": "g++",
-      "install_commands": {
-        "apt": "sudo apt install {{command_alias}}",
-        "yum": "sudo yum install gcc-c++",
-        "dnf": "sudo dnf install gcc-c++",
-        "brew": "brew install gcc"
+      "available_package_managers": ["apt", "yum", "brew"],
+      "install_names": {
+        "apt": "g++-{{version}}",
+        "yum": "gcc-c++",
+        "dnf": "gcc-c++-{{version}}",
+        "brew": "gcc@{{version}}"
+      }
+    }
+    "Scala": {
+      "versions": ["2.13", "3.0"],
+      "available_package_managers": ["apt", "brew"],
+      "install_names": {
+        "apt": "scala-{{version}}",
+        "brew": "scala@{{version}}"
+      }
+      "customizations": {
+        "arch": ["x86", "ARM"]
       }
     }
   }
