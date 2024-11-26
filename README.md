@@ -8,7 +8,7 @@ This script is currently being rebuild. The new version will be a universal buil
 
 ## To Supported Languages
 
-Codinstall currently supports the installation of the following programming languages:
+Codinstall currently is set to support the installation of the following programming languages:
 
 - Ada
 - Assembly

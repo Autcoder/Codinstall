@@ -89,17 +89,17 @@ It also stores the different install command templates for each package manager.
 **Command Templates**:
 Dictionsary of command templates for each package manager:
 
-````go
+```go
 package executer
 
 // commandTemplates is a map that associates package managers with their install command templates.
 var commandTemplates = map[string]string{
-	"apt":  "sudo apt install",
-	"yum":  "sudo yum install",
-	"brew": "brew install",
-	// Add more package managers as needed
+ "apt":  "sudo apt install",
+ "yum":  "sudo yum install",
+ "brew": "brew install",
+ // Add more package managers as needed
 }
-`````
+```
 
 **Notes**:
 
