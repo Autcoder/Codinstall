@@ -89,15 +89,17 @@ It also stores the different install command templates for each package manager.
 **Command Templates**:
 Dictionsary of command templates for each package manager:
 
-```go
-// commandTemplates is a map of package managers to their respective command templates
+````go
+package executer
+
+// commandTemplates is a map that associates package managers with their install command templates.
 var commandTemplates = map[string]string{
-  "apt": "sudo apt install",
-  "yum": "sudo yum install",
-  "brew": "brew install",
-  // Add more package managers as needed
-  }
-```
+	"apt":  "sudo apt install",
+	"yum":  "sudo yum install",
+	"brew": "brew install",
+	// Add more package managers as needed
+}
+`````
 
 **Notes**:
 
@@ -134,14 +136,14 @@ This JSON file contains data on supported languages, including available version
         "dnf": "gcc-c++-{{version}}",
         "brew": "gcc@{{version}}"
       }
-    }
+    },
     "Scala": {
       "versions": ["2.13", "3.0"],
       "available_package_managers": ["apt", "brew"],
       "install_names": {
         "apt": "scala-{{version}}",
         "brew": "scala@{{version}}"
-      }
+      },
       "customizations": {
         "arch": ["x86", "ARM"]
       }

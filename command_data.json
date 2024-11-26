@@ -1,0 +1,35 @@
+{
+  "languages": {
+    "Python": {
+      "versions": ["3.9", "3.10", "3.11"],
+      "available_package_managers": ["apt", "yum", "brew"],
+      "install_names": {
+        "apt": "python{{version}}",
+        "yum": "python{{version}}",
+        "dnf": "python{{version}}",
+        "brew": "python@{{version}}"
+      }
+    },
+    "C++": {
+      "versions": ["11", "14", "17", "20"],
+      "available_package_managers": ["apt", "yum", "brew"],
+      "install_names": {
+        "apt": "g++-{{version}}",
+        "yum": "gcc-c++",
+        "dnf": "gcc-c++-{{version}}",
+        "brew": "gcc@{{version}}"
+      }
+    },
+    "Scala": {
+      "versions": ["2.13", "3.0"],
+      "available_package_managers": ["apt", "brew"],
+      "install_names": {
+        "apt": "scala-{{version}}",
+        "brew": "scala@{{version}}"
+      },
+      "customizations": {
+        "arch": ["x86", "ARM"]
+      }
+    }
+  }
+}
