@@ -1,61 +1,1977 @@
 {
   "languages": {
-    "Python": {
-      "dependencies": ["libssl", "zlib"],
+    "Ada": {
+      "dependencies": [],
       "package_managers": {
         "apt": {
-          "versions": ["3.9", "3.10", "3.11"],
-          "install_name": "python{{version}}"
+          "versions": [],
+          "install_name": ""
         },
         "yum": {
-          "versions": ["3.9", "3.10", "3.11"],
-          "install_name": "python{{version}}"
+          "versions": [],
+          "install_name": ""
         },
         "dnf": {
-          "versions": ["3.9", "3.10", "3.11"],
-          "install_name": "python{{version}}"
+          "versions": [],
+          "install_name": ""
         },
         "brew": {
-          "versions": ["3.9", "3.10", "3.11"],
-          "install_name": "python@{{version}}"
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Assembly": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Awk": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "ActionScript": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "ALGOL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Bash": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Brainfuck": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Ballerina": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Boo": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "C": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
         }
       }
     },
     "C++": {
-      "dependencies": ["libstdc++", "gcc"],
+      "dependencies": [],
       "package_managers": {
         "apt": {
-          "versions": ["11", "14", "17", "20"],
-          "install_name": "g++-{{version}}"
+          "versions": [],
+          "install_name": ""
         },
         "yum": {
-          "versions": ["11", "14", "17", "20"],
-          "install_name": "gcc-c++"
+          "versions": [],
+          "install_name": ""
         },
         "dnf": {
-          "versions": ["11", "14", "17", "20"],
-          "install_name": "gcc-c++-{{version}}"
+          "versions": [],
+          "install_name": ""
         },
         "brew": {
-          "versions": ["11", "14", "17", "20"],
-          "install_name": "gcc@{{version}}"
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "C#": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Clojure": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Crystal": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Cobol": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Common Lisp": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "D": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Dart": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Delphi": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Deno": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Dylan": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Elixir": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Erlang": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Eiffel": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Elm": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "F#": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Forth": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Flutter": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Fortran": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Go": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Genie": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "GraphQL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Groovy": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Haskell": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Haxe": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Hy": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Hack": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Io": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Idris": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Inform": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Java": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "JavaScript": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Julia": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "J": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Kotlin": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Lisp": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Lua": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Logo": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "MATLAB/Octave": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Modula-2": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Mercury": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Nim": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Node.js": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Nix": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Objective-C": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "OCaml": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "OpenCL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Oz": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Pascal": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Perl": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "PHP": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "PL/SQL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "PostgreSQL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Prolog": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Python": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "PureScript": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "R": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Racket": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "ReasonML/Rescript": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "RPG": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Ruby": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Rust": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
         }
       }
     },
     "Scala": {
-      "dependencies": ["openjdk"],
+      "dependencies": [],
       "package_managers": {
         "apt": {
-          "versions": ["2.13", "3.0"],
-          "install_name": "scala-{{version}}"
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
         },
         "brew": {
-          "versions": ["2.13", "3.0"],
-          "install_name": "scala@{{version}}"
+          "versions": [],
+          "install_name": ""
         }
-      },
-      "customizations": {
-        "arch": ["x86", "ARM"]
+      }
+    },
+    "Scheme": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Scratch": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Shell (Bash/Zsh/Fish)": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Smalltalk": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Solidity": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "SQL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Swift": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Tcl": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "TypeScript": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Turing": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "VB.NET": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "V": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Verilog": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "VHDL": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Wolfram": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "WebAssembly": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "XQuery": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "XSLT": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "YAML": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Zig": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
+      }
+    },
+    "Zsh": {
+      "dependencies": [],
+      "package_managers": {
+        "apt": {
+          "versions": [],
+          "install_name": ""
+        },
+        "yum": {
+          "versions": [],
+          "install_name": ""
+        },
+        "dnf": {
+          "versions": [],
+          "install_name": ""
+        },
+        "brew": {
+          "versions": [],
+          "install_name": ""
+        }
       }
     }
   }
