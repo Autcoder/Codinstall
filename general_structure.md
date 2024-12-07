@@ -118,31 +118,58 @@ This JSON file contains data on supported languages, including available version
 {
   "languages": {
     "Python": {
-      "versions": ["3.9", "3.10", "3.11"],
-      "available_package_managers": ["apt", "yum", "brew"],
-      "install_names": {
-        "apt": "python{{version}}",
-        "yum": "python{{version}}",
-        "dnf": "python{{version}}",
-        "brew": "python@{{version}}"
+      "dependencies": ["libssl", "zlib"],
+      "package_managers": {
+        "apt": {
+          "versions": ["3.9", "3.10", "3.11"],
+          "install_name": "python{{version}}"
+        },
+        "yum": {
+          "versions": ["3.9", "3.10", "3.11"],
+          "install_name": "python{{version}}"
+        },
+        "dnf": {
+          "versions": ["3.9", "3.10", "3.11"],
+          "install_name": "python{{version}}"
+        },
+        "brew": {
+          "versions": ["3.9", "3.10", "3.11"],
+          "install_name": "python@{{version}}"
+        }
       }
     },
     "C++": {
-      "versions": ["11", "14", "17", "20"],
-      "available_package_managers": ["apt", "yum", "brew"],
-      "install_names": {
-        "apt": "g++-{{version}}",
-        "yum": "gcc-c++",
-        "dnf": "gcc-c++-{{version}}",
-        "brew": "gcc@{{version}}"
+      "dependencies": ["libstdc++", "gcc"],
+      "package_managers": {
+        "apt": {
+          "versions": ["11", "14", "17", "20"],
+          "install_name": "g++-{{version}}"
+        },
+        "yum": {
+          "versions": ["11", "14", "17", "20"],
+          "install_name": "gcc-c++"
+        },
+        "dnf": {
+          "versions": ["11", "14", "17", "20"],
+          "install_name": "gcc-c++-{{version}}"
+        },
+        "brew": {
+          "versions": ["11", "14", "17", "20"],
+          "install_name": "gcc@{{version}}"
+        }
       }
     },
     "Scala": {
-      "versions": ["2.13", "3.0"],
-      "available_package_managers": ["apt", "brew"],
-      "install_names": {
-        "apt": "scala-{{version}}",
-        "brew": "scala@{{version}}"
+      "dependencies": ["openjdk"],
+      "package_managers": {
+        "apt": {
+          "versions": ["2.13", "3.0"],
+          "install_name": "scala-{{version}}"
+        },
+        "brew": {
+          "versions": ["2.13", "3.0"],
+          "install_name": "scala@{{version}}"
+        }
       },
       "customizations": {
         "arch": ["x86", "ARM"]

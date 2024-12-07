@@ -12,163 +12,168 @@ Codinstall currently is set to support the installation of the following program
 
 ### A
 
-- Ada (inst: GNAT)
-- Assembly (inst: nasm)
-- Awk (inst: gawk)
-- ActionScript (inst: Apache Flex)
-- ALGOL (inst: algol68g)
+- Ada
+- Assembly
+- Awk
+- ActionScript
+- ALGOL
 
 ### B
 
-- Bash (inst: GNU Bash)
-- Brainfuck (inst: bf)
-- Ballerina (inst: Ballerina CLI)
-- Boo (inst: boo)
+- Bash
+- Brainfuck
+- Ballerina
+- Boo
 
 ### C
 
-- C (inst: gcc)
-- C++ (inst: g++)
-- C# (inst: .NET SDK)
-- Clojure (inst: Leiningen)
-- Crystal (inst: Crystal compiler)
-- Cobol (inst: GnuCOBOL)
-- Common Lisp (inst: SBCL)
+- C
+- C++
+- C#
+- Clojure
+- Crystal
+- Cobol
+- Common Lisp
 
 ### D
 
-- D (inst: DMD)
-- Dart (inst: Flutter) runs via Flutter
-- Delphi (inst: Free Pascal)
-- Dylan (inst: dylan-compiler)
+- D
+- Dart
+- Delphi
+- Deno
+- Dylan
 
 ### E
 
-- Elixir (inst: Elixir)
-- Erlang (inst: Erlang/OTP)
-- Eiffel (inst: SmartEiffel)
-- Elm (inst: Elm CLI)
+- Elixir
+- Erlang
+- Eiffel
+- Elm
 
 ### F
 
-- F# (inst: .NET SDK)
-- Forth (inst: gforth)
-- Flutter (inst: Flutter SDK)
-- Fortran (inst: gfortran)
+- F#
+- Forth
+- Flutter
+- Fortran
 
 ### G
 
-- Go (Golang) (inst: Go)
-- Groovy (inst: Groovy CLI)
-- Genie (inst: Vala)
+- Go
+- Genie
+- GraphQL
+- Groovy
 
 ### H
 
-- Haskell (inst: GHC)
-- Haxe (inst: Haxe Toolkit)
-- Hy (inst: Hy)
-- Hack (inst: HHVM)
+- Haskell
+- Haxe
+- Hy
+- Hack
 
 ### I
 
-- Io (inst: Io)
-- Idris (inst: Idris compiler)
-- Inform (inst: Inform CLI)
+- Io
+- Idris
+- Inform
 
 ### J
 
-- Java (inst: OpenJDK)
-- JavaScript (inst: Node.js for runtime)
-- Julia (inst: Julia)
-- J (inst: J interpreter)
+- Java
+- JavaScript
+- Julia
+- J
 
 ### K
 
-- Kotlin (inst: Kotlin compiler)
+- Kotlin
 
 ### L
 
-- Lisp (inst: SBCL)
-- Lua (inst: Lua)
-- Logo (inst: UCBLogo)
+- Lisp
+- Lua
+- Logo
 
 ### M
 
-- MATLAB/Octave (inst: Octave)
-- Modula-2 (inst: gm2)
-- Mercury (inst: Mercury compiler)
+- MATLAB/Octave
+- Modula-2
+- Mercury
 
 ### N
 
-- Nim (inst: Nim compiler)
-- Node.js (inst: Node.js runtime)
-- Nix (inst: Nix CLI)
+- Nim
+- Node.js
+- Nix
 
 ### O
 
-- Objective-C (inst: clang)
-- OCaml (inst: OCaml compiler)
-- OpenCL (inst: OpenCL SDK)
-- Oz (inst: Mozart/Oz)
+- Objective-C
+- OCaml
+- OpenCL
+- Oz
 
 ### P
 
-- Pascal (inst: Free Pascal)
-- Perl (inst: Perl)
-- PHP (inst: PHP)
-- PL/SQL (inst: SQLPlus or Oracle Instant Client)
-- PostgreSQL (inst: PostgreSQL)
-- Prolog (inst: SWI-Prolog)
-- Python (inst: Python3)
-- PureScript (inst: PureScript CLI)
+- Pascal
+- Perl
+- PHP
+- PL/SQL
+- PostgreSQL
+- Prolog
+- Python
+- PureScript
 
 ### R
 
-- R (inst: R)
-- ReasonML/Rescript (inst: Rescript CLI)
-- Ruby (inst: Ruby)
-- Rust (inst: Rust via rustup)
-- Racket (inst: Racket)
+- R
+- Racket
+- ReasonML/Rescript
+- RPG
+- Ruby
+- Rust
+- Racket
 
 ### S
 
-- Scala (inst: Scala CLI)
-- Shell (Bash/Zsh/Fish) (inst: Shell interpreter)
-- Smalltalk (inst: GNU Smalltalk)
-- Swift (inst: Swift)
-- SQL (inst: SQLite)
-- Scheme (inst: GNU Guile)
-- Scratch (inst: Scratch)
+- Scala
+- Scheme
+- Scratch
+- Shell (Bash/Zsh/Fish)
+- Smalltalk
+- Solidity
+- SQL
+- Swift
 
 ### T
 
-- Tcl (inst: Tcl)
-- TypeScript (inst: TypeScript via Node.js)
-- Turing (inst: OpenTuring)
+- Tcl
+- TypeScript
+- Turing
 
 ### V
 
-- VB.NET (inst: .NET SDK)
-- V (inst: V compiler)
-- Verilog (inst: Icarus Verilog)
-- VHDL (inst: GHDL)
+- VB.NET
+- V
+- Verilog
+- VHDL
 
 ### W
 
-- Wolfram (inst: Wolfram Engine)
-- WebAssembly (WASM) (inst: WASI SDK)
+- Wolfram
+- WebAssembly
 
 ### X
 
-- x86 Assembly (inst: nasm)
-- XQuery (inst: BaseX)
-- XSLT (inst: Saxon CLI)
+- x86 Assembly
+- XQuery
+- XSLT
 
 ### Y
 
-- YAML (inst: YAML parsers)
+- YAML
 
 ### Z
 
-- Zig (inst: Zig compiler)
-- Zsh (inst: Z shell)
+- Zig
+- Zsh
