@@ -1,6 +1,6 @@
 {
   "languages": {
-    "Ada": {
+    "ada": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -16,12 +16,12 @@
           "install_name": ""
         },
         "brew": {
-          "versions": [],
-          "install_name": ""
+          "versions": ["7", "8", "9", "10", "11", "12", "13"],
+          "install_name": "gcc"
         }
       }
     },
-    "Assembly": {
+    "assembly": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -42,7 +42,7 @@
         }
       }
     },
-    "Awk": {
+    "awk": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -63,7 +63,7 @@
         }
       }
     },
-    "ActionScript": {
+    "actionscript": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -84,7 +84,7 @@
         }
       }
     },
-    "ALGOL": {
+    "algol": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -105,7 +105,7 @@
         }
       }
     },
-    "Bash": {
+    "bash": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -126,7 +126,7 @@
         }
       }
     },
-    "Brainfuck": {
+    "brainfuck": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -147,7 +147,7 @@
         }
       }
     },
-    "Ballerina": {
+    "ballerina": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -168,7 +168,7 @@
         }
       }
     },
-    "Boo": {
+    "boo": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -189,7 +189,7 @@
         }
       }
     },
-    "C": {
+    "c": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -210,7 +210,7 @@
         }
       }
     },
-    "C++": {
+    "c++": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -231,7 +231,7 @@
         }
       }
     },
-    "C#": {
+    "c#": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -252,7 +252,7 @@
         }
       }
     },
-    "Clojure": {
+    "clojure": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -273,7 +273,7 @@
         }
       }
     },
-    "Crystal": {
+    "crystal": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -294,7 +294,7 @@
         }
       }
     },
-    "Cobol": {
+    "cobol": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -315,7 +315,7 @@
         }
       }
     },
-    "Common Lisp": {
+    "common lisp": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -336,7 +336,7 @@
         }
       }
     },
-    "D": {
+    "d": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -357,7 +357,7 @@
         }
       }
     },
-    "Dart": {
+    "dart": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -378,7 +378,7 @@
         }
       }
     },
-    "Delphi": {
+    "delphi": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -399,7 +399,7 @@
         }
       }
     },
-    "Deno": {
+    "deno": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -420,7 +420,7 @@
         }
       }
     },
-    "Dylan": {
+    "dylan": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -441,7 +441,7 @@
         }
       }
     },
-    "Elixir": {
+    "elixir": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -462,7 +462,7 @@
         }
       }
     },
-    "Erlang": {
+    "erlang": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -483,7 +483,7 @@
         }
       }
     },
-    "Eiffel": {
+    "eiffel": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -504,7 +504,7 @@
         }
       }
     },
-    "Elm": {
+    "elm": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -525,7 +525,7 @@
         }
       }
     },
-    "F#": {
+    "f#": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -546,7 +546,7 @@
         }
       }
     },
-    "Forth": {
+    "forth": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -567,7 +567,7 @@
         }
       }
     },
-    "Flutter": {
+    "flutter": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -588,7 +588,7 @@
         }
       }
     },
-    "Fortran": {
+    "fortran": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -609,7 +609,7 @@
         }
       }
     },
-    "Go": {
+    "go": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -630,7 +630,7 @@
         }
       }
     },
-    "Genie": {
+    "genie": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -651,7 +651,7 @@
         }
       }
     },
-    "GraphQL": {
+    "graphql": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -672,7 +672,7 @@
         }
       }
     },
-    "Groovy": {
+    "groovy": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -693,7 +693,7 @@
         }
       }
     },
-    "Haskell": {
+    "haskell": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -714,7 +714,7 @@
         }
       }
     },
-    "Haxe": {
+    "haxe": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -735,7 +735,7 @@
         }
       }
     },
-    "Hy": {
+    "hy": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -756,7 +756,7 @@
         }
       }
     },
-    "Hack": {
+    "hack": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -777,7 +777,7 @@
         }
       }
     },
-    "Io": {
+    "io": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -798,7 +798,7 @@
         }
       }
     },
-    "Idris": {
+    "idris": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -819,7 +819,7 @@
         }
       }
     },
-    "Inform": {
+    "inform": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -840,7 +840,7 @@
         }
       }
     },
-    "Java": {
+    "java": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -861,7 +861,7 @@
         }
       }
     },
-    "JavaScript": {
+    "javascript": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -882,7 +882,7 @@
         }
       }
     },
-    "Julia": {
+    "julia": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -903,7 +903,7 @@
         }
       }
     },
-    "J": {
+    "j": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -924,7 +924,7 @@
         }
       }
     },
-    "Kotlin": {
+    "kotlin": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -945,7 +945,7 @@
         }
       }
     },
-    "Lisp": {
+    "lisp": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -966,7 +966,7 @@
         }
       }
     },
-    "Lua": {
+    "lua": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -987,7 +987,7 @@
         }
       }
     },
-    "Logo": {
+    "logo": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1008,7 +1008,7 @@
         }
       }
     },
-    "MATLAB/Octave": {
+    "matlab/octave": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1029,7 +1029,7 @@
         }
       }
     },
-    "Modula-2": {
+    "modula-2": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1050,7 +1050,7 @@
         }
       }
     },
-    "Mercury": {
+    "mercury": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1071,7 +1071,7 @@
         }
       }
     },
-    "Nim": {
+    "nim": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1092,7 +1092,7 @@
         }
       }
     },
-    "Node.js": {
+    "node.js": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1113,7 +1113,7 @@
         }
       }
     },
-    "Nix": {
+    "nix": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1134,7 +1134,7 @@
         }
       }
     },
-    "Objective-C": {
+    "objective-c": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1155,7 +1155,7 @@
         }
       }
     },
-    "OCaml": {
+    "ocaml": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1176,7 +1176,7 @@
         }
       }
     },
-    "OpenCL": {
+    "opencl": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1197,7 +1197,7 @@
         }
       }
     },
-    "Oz": {
+    "oz": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1218,7 +1218,7 @@
         }
       }
     },
-    "Pascal": {
+    "pascal": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1239,7 +1239,7 @@
         }
       }
     },
-    "Perl": {
+    "perl": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1260,7 +1260,7 @@
         }
       }
     },
-    "PHP": {
+    "php": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1281,7 +1281,7 @@
         }
       }
     },
-    "PL/SQL": {
+    "pl/sql": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1302,7 +1302,7 @@
         }
       }
     },
-    "PostgreSQL": {
+    "postgresql": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1323,7 +1323,7 @@
         }
       }
     },
-    "Prolog": {
+    "prolog": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1344,7 +1344,7 @@
         }
       }
     },
-    "Python": {
+    "python": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1360,12 +1360,12 @@
           "install_name": ""
         },
         "brew": {
-          "versions": [],
-          "install_name": ""
+          "versions": [3.8, 3.9, 3.1, 3.11, 3.12, 3.13],
+          "install_name": "python@{{version}}"
         }
       }
     },
-    "PureScript": {
+    "purescript": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1386,7 +1386,7 @@
         }
       }
     },
-    "R": {
+    "r": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1407,7 +1407,7 @@
         }
       }
     },
-    "Racket": {
+    "racket": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1428,7 +1428,7 @@
         }
       }
     },
-    "ReasonML/Rescript": {
+    "reasonml/rescript": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1449,7 +1449,7 @@
         }
       }
     },
-    "RPG": {
+    "rpg": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1470,7 +1470,7 @@
         }
       }
     },
-    "Ruby": {
+    "ruby": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1491,7 +1491,7 @@
         }
       }
     },
-    "Rust": {
+    "rust": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1512,7 +1512,7 @@
         }
       }
     },
-    "Scala": {
+    "scala": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1533,7 +1533,7 @@
         }
       }
     },
-    "Scheme": {
+    "scheme": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1554,7 +1554,7 @@
         }
       }
     },
-    "Scratch": {
+    "scratch": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1575,7 +1575,7 @@
         }
       }
     },
-    "Shell (Bash/Zsh/Fish)": {
+    "shell (bash/zsh/fish)": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1596,7 +1596,7 @@
         }
       }
     },
-    "Smalltalk": {
+    "smalltalk": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1617,7 +1617,7 @@
         }
       }
     },
-    "Solidity": {
+    "solidity": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1638,7 +1638,7 @@
         }
       }
     },
-    "SQL": {
+    "sql": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1659,7 +1659,7 @@
         }
       }
     },
-    "Swift": {
+    "swift": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1680,7 +1680,7 @@
         }
       }
     },
-    "Tcl": {
+    "tcl": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1701,7 +1701,7 @@
         }
       }
     },
-    "TypeScript": {
+    "typescript": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1722,7 +1722,7 @@
         }
       }
     },
-    "Turing": {
+    "turing": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1743,7 +1743,7 @@
         }
       }
     },
-    "VB.NET": {
+    "vb.net": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1764,7 +1764,7 @@
         }
       }
     },
-    "V": {
+    "v": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1785,7 +1785,7 @@
         }
       }
     },
-    "Verilog": {
+    "verilog": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1806,7 +1806,7 @@
         }
       }
     },
-    "VHDL": {
+    "vhdl": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1827,7 +1827,7 @@
         }
       }
     },
-    "Wolfram": {
+    "wolfram": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1848,7 +1848,7 @@
         }
       }
     },
-    "WebAssembly": {
+    "webassembly": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1869,7 +1869,7 @@
         }
       }
     },
-    "XQuery": {
+    "xquery": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1890,7 +1890,7 @@
         }
       }
     },
-    "XSLT": {
+    "xslt": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1911,7 +1911,7 @@
         }
       }
     },
-    "YAML": {
+    "yaml": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1932,7 +1932,7 @@
         }
       }
     },
-    "Zig": {
+    "zig": {
       "dependencies": [],
       "package_managers": {
         "apt": {
@@ -1953,7 +1953,7 @@
         }
       }
     },
-    "Zsh": {
+    "zsh": {
       "dependencies": [],
       "package_managers": {
         "apt": {
