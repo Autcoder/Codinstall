@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 
@@ -12,35 +13,55 @@ import (
 )
 
 func main() {
-
-	// Parse the arguments from the cli command
+	helpFlag := flag.Bool("help", false, "Display usage information")
+	// Re-introduce a global version flag so that it works when placed before a language.
+	versionFlag := flag.String("version", "", "Specify version non-interactively for the first language")
+	preferFlag := flag.String("prefer", "", "Specify package manager preference")
 	flag.Parse()
+
+	if *helpFlag {
+		fmt.Println("Usage: codinstall [options] <language> [--version=...] <language> [--version=...] ...")
+		fmt.Println("Options:")
+		fmt.Println("  -help                Display this help message")
+		fmt.Println("  -prefer              Specify package manager preference (e.g., brew, apt)")
+		fmt.Println("  -version=<version>   Specify version non-interactively for the first language")
+		// fmt.Println("  --version=<version>  Specify version for the following language")
+		os.Exit(0)
+	}
+
 	args := flag.Args()
 	if len(args) == 0 {
 		fmt.Println("No arguments provided")
-		fmt.Println("Example usage: codinstall <language1> <language2> ...")
-		fmt.Println("\nFor more information, run 'codinstall --help'")
+		fmt.Println("Example: codinstall -version=3.13 python")
 		os.Exit(1)
 	}
 
-	// For each language, validate and run install process
-	for _, lang := range args {
-		lang = strings.ToLower(lang)
-		fmt.Printf("Installing %s...\n", lang)
-		pm, err := pkgmanager.DetectPackageManager()
-		if err != nil {
-			fmt.Println("Error:", err)
-			continue
-		}
-		langInfo, err := language_processor.ValidateLanguage(lang, pm)
-		if err != nil {
-			fmt.Println("Error:", err)
-			continue
-		}
+	mgr, err := pkgmanager.DetectPackageManager(*preferFlag)
+	if err != nil {
+		log.Println("Error detecting package manager:", err)
+		os.Exit(1)
+	}
 
-		err = executer.RunInstall(lang, langInfo.Version, langInfo.Customizations, pm)
+	// Start with the global version flag value.
+	currentVersion := *versionFlag
+	for i := range args {
+		arg := args[i]
+		if strings.HasPrefix(arg, "-version=") {
+			currentVersion = strings.TrimPrefix(arg, "-version=")
+			continue
+		}
+		// Treat arg as a language
+		lang := strings.ToLower(arg)
+		log.Printf("Installing %s...", lang)
+		langInfo, err := language_processor.ValidateLanguage(lang, mgr, currentVersion)
+		currentVersion = "" // Reset after use, so additional languages won't use previous version.
 		if err != nil {
-			fmt.Println("Installation error:", err)
+			log.Println("Error:", err)
+			continue
+		}
+		err = executer.RunInstall(lang, langInfo.Version, langInfo.Customizations, mgr)
+		if err != nil {
+			log.Println("Installation error:", err)
 		}
 	}
 }

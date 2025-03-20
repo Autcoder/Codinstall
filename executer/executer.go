@@ -3,6 +3,7 @@ package executer
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
 	"strings"
@@ -35,12 +36,14 @@ func RunInstall(language, version string, customizations map[string]string, pack
 	// Read the command_data.json file
 	data, err := os.ReadFile("/Users/flenski/Documents/Coding/Codinstall/command_data.json")
 	if err != nil {
+		log.Printf("Error reading command data: %v", err)
 		return err
 	}
 
 	var cmdData CommandData
 	err = json.Unmarshal(data, &cmdData)
 	if err != nil {
+		log.Printf("Error unmarshalling command data: %v", err)
 		return err
 	}
 
@@ -67,14 +70,15 @@ func RunInstall(language, version string, customizations map[string]string, pack
 
 	// Construct full installation command and run it
 	cmdStr := fmt.Sprintf("%s %s", baseCmd, installName)
-	fmt.Printf("Running command: %s\n", cmdStr)
+	log.Printf("Running command: %s", cmdStr)
 
 	cmd := exec.Command("bash", "-c", cmdStr)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("failed to run command: %s, output: %s", err, string(output))
+		log.Printf("Failed to run command: %v, output: %s", err, string(output))
+		return fmt.Errorf("failed to run command: %v", err)
 	}
 
-	fmt.Printf("Output: %s\n", string(output))
+	log.Printf("Command output: %s", string(output))
 	return nil
 }
