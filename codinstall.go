@@ -13,6 +13,7 @@ import (
 )
 
 func main() {
+	// TODO: Consider refactoring CLI argument parsing (e.g., using Cobra) for improved help output and structure.
 	helpFlag := flag.Bool("help", false, "Display usage information")
 	// Re-introduce a global version flag so that it works when placed before a language.
 	versionFlag := flag.String("version", "", "Specify version non-interactively for the first language")
